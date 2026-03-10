@@ -8,7 +8,7 @@ const interest = Astro.url.searchParams.get('interest') as 'sponsorship' | 'cons
 
 <BaseLayout title="Contact" description="Get in touch with Open Navigation LLC for sponsorship, consulting, or general inquiries.">
   <!-- Hero -->
-  <section class="bg-gradient-to-br from-nav2-blue/10 to-white dark:from-gray-800 dark:to-gray-900 py-16 md:py-24">
+  <section class="relative bg-gradient-to-br from-nav2-blue/20 via-nav2-blue-medium/15 to-nav2-blue-dark/25 dark:from-nav2-blue-dark/30 dark:via-nav2-blue-medium/20 dark:to-gray-900 py-16 md:py-24">
     <div class="section-container text-center">
       <h1 class="text-4xl md:text-5xl font-bold text-nav2-grey dark:text-white mb-6">
         Get in <span class="text-nav2-blue dark:text-nav2-blue-light">Touch</span>
@@ -18,6 +18,7 @@ const interest = Astro.url.searchParams.get('interest') as 'sponsorship' | 'cons
         We'd love to hear from you.
       </p>
     </div>
+    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white dark:from-gray-900 to-transparent"></div>
   </section>
 
   <!-- Contact Section -->

@@ -23,7 +23,7 @@ const formattedDate = post.data.pubDate.toLocaleDateString('en-US', {
 <BaseLayout title={post.data.title} description={post.data.description}>
   <article>
     <!-- Header -->
-    <section class="bg-gradient-to-br from-nav2-blue/10 to-white dark:from-gray-800 dark:to-gray-900 py-16 md:py-24">
+    <section class="relative bg-gradient-to-br from-nav2-blue/20 via-nav2-blue-medium/15 to-nav2-blue-dark/25 dark:from-nav2-blue-dark/30 dark:via-nav2-blue-medium/20 dark:to-gray-900 py-16 md:py-24">
       <div class="section-container">
         <div class="max-w-3xl mx-auto">
           <a href="/news" class="inline-flex items-center gap-2 text-nav2-blue hover:underline mb-6">
@@ -52,6 +52,7 @@ const formattedDate = post.data.pubDate.toLocaleDateString('en-US', {
           </div>
         </div>
       </div>
+      <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white dark:from-gray-900 to-transparent"></div>
     </section>
 
     <!-- Content -->
