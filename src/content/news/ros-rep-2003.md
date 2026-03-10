@@ -13,29 +13,53 @@ We're excited to announce the acceptance of ROS REP 2003, a new standard for Qua
 
 ## Introduction to ROS Enhancement Proposals
 
-The ROS Enhancement Proposals (REP) program standardizes structures and processes, establishing design rationale that improves subsystem interoperability across the robotics developer community. Key examples include standardized units, coordinate frames for mobile robotics, driver namespace practices, and ROS 2 platform versions.
+The ROS Enhancement Proposals (REP) program standardizes structures and processes, improving interoperability when multiple development groups create robot subsystems. Important examples include:
+
+- **REP-103:** Standardizing Units
+- **REP-105:** Standardizing Mobile Robotics Coordinate frames
+- **REP-135:** Standardizing Driver Namespace Practices
+- **REP-2000:** Describing ROS 2 Versions' Target Platforms & Dependency Versions
+
+These REPs ensure message data being in SI units, that a structured transformation tree is available, and promote compatibility across organizations worldwide.
 
 ## Quality of Service Overview
 
-ROS 2 introduces Quality of Service (QoS) settings from the DDS specification, enabling "per-stream" network transport tuning. The essential QoS parameters include:
+ROS 2 introduces Quality of Service (QoS) settings from the DDS specification, allowing developers to tune the network moving data around computers and remote servers with great detail.
 
-- **History:** Retention of all or recent N messages
-- **Depth:** Size N of historical messages
+### Essential QoS Settings
+
+- **History:** Whether to keep all or just the last N messages
+- **Depth:** The size N of the history
 - **Reliability:** Delivery attempt intensity
-- **Durability:** Publisher message persistence for late subscribers
+- **Durability:** Whether publishers store messages for later-joining subscriptions
 
-While QoS provides granular control, it introduces complexity: modules may be created to be type and structurally compatible, but without using compatible QoS profiles.
+Additional characteristics (Lifespan, Livelihood, Deadline, Lease Duration) serve real-time or safety-sensitive applications.
+
+![QoS Settings Interface](/images/news/qos-settings.png)
+
+While QoS provides granular control, it comes with the overhead of needing to make wise choices and creates new potential issues when modules lack compatible QoS profiles.
 
 ## REP 2003 Proposal
 
-[REP 2003](https://github.com/ros-infrastructure/rep/pull/212) standardizes QoS for two critical domains:
+[REP 2003](https://github.com/ros-infrastructure/rep/pull/212), currently under ROS Technical Steering Committee consideration, standardizes QoS for two critical domains:
 
-**Maps:** Global environment representations (occupancy grids, feature maps, voxel grids) should use *Transient-Local* Durability with user-selectable history/depth—analogous to ROS 1's latched profile.
+### Maps
 
-**Sensor Data:** Drivers publish via *SystemDefaultQoS*; subscriptions use *SensorDataQoS* for unreliable transmission from source to initial processing.
+Global environment representations (occupancy grids, feature maps, voxel grids) should use *Transient-Local* Durability QoS profile with user-selectable history/depth size—analogous to ROS 1's *Latched* profile.
+
+### Sensor Data
+
+Sensor drivers publish using *SystemDefaultQoS* profile; subscriptions use *SensorDataQoS* profile, allowing unreliable transmission from source to first processing stage.
 
 ## Practical Impact
 
-The proposal addresses recurring community questions about incompatible QoS profiles between publishers and subscribers. By formalizing existing best practices, it reduces integration friction and enables developers to create compatible SLAM, localization, mapping, and sensor-processing nodes across the ecosystem.
+The proposal addresses recurring community questions about incompatible QoS profiles between publishers and subscribers. REP 2003 will deal with that issue once and for all by establishing the standard which is already best-practices and widely in use.
 
-Read the full REP at [ros.org/reps](https://ros.org/reps/rep-2003.html).
+Benefits include:
+
+- Formalizing existing best practices
+- Helping future developers create compatible SLAM, localization, map-serving, and sensor-driving nodes
+- Removing integration issues from the ROS ecosystem
+- Catalyzing further QoS standardizations (like for base commands)
+
+Read the full REP at [ros.org/reps/rep-2003.html](https://ros.org/reps/rep-2003.html).

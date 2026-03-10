@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import SponsorCard from '@components/SponsorCard.astro';
+import LowPolyBackground from '@components/LowPolyBackground.astro';
 
 const generalBenefits = [
   'Commitment to keep Nav2 open and free',
@@ -47,13 +48,14 @@ const tiers = {
 
 <BaseLayout title="Sponsorship" description="Support Nav2 development and gain access to expert maintainers through our sponsorship program.">
   <!-- Hero -->
-  <section class="relative bg-gradient-to-br from-nav2-blue/20 via-nav2-blue-medium/15 to-nav2-blue-dark/25 dark:from-nav2-blue-dark/30 dark:via-nav2-blue-medium/20 dark:to-gray-900 py-16 md:py-24">
-    <div class="section-container text-center">
+  <section class="relative overflow-x-clip bg-gradient-to-br from-nav2-blue/10 via-white to-nav2-blue-light/10 dark:from-nav2-blue-dark/30 dark:via-gray-900 dark:to-gray-900 py-16 md:py-24">
+    <LowPolyBackground />
+    <div class="section-container text-center relative z-10">
       <h1 class="text-4xl md:text-5xl font-bold text-nav2-grey dark:text-white mb-6">
         Sponsor <span class="text-nav2-blue dark:text-nav2-blue-light">Nav2</span>
       </h1>
       <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-        Join 100+ companies worldwide in supporting the most widely-used mobile robot navigation framework.
+        Join 300+ companies worldwide in supporting the most widely-used mobile robot navigation framework.
         Your sponsorship helps keep Nav2 free and continuously improving.
       </p>
     </div>

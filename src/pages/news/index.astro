@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import NewsCard from '@components/NewsCard.astro';
+import LowPolyBackground from '@components/LowPolyBackground.astro';
 import { getCollection } from 'astro:content';
 
 const allPosts = await getCollection('news');
@@ -9,8 +10,9 @@ const sortedPosts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pu
 
 <BaseLayout title="News" description="Latest news, announcements, and updates from Open Navigation and Nav2.">
   <!-- Hero -->
-  <section class="relative bg-gradient-to-br from-nav2-blue/20 via-nav2-blue-medium/15 to-nav2-blue-dark/25 dark:from-nav2-blue-dark/30 dark:via-nav2-blue-medium/20 dark:to-gray-900 py-16 md:py-24">
-    <div class="section-container text-center">
+  <section class="relative overflow-x-clip bg-gradient-to-br from-nav2-blue/10 via-white to-nav2-blue-light/10 dark:from-nav2-blue-dark/30 dark:via-gray-900 dark:to-gray-900 py-16 md:py-24">
+    <LowPolyBackground />
+    <div class="section-container text-center relative z-10">
       <h1 class="text-4xl md:text-5xl font-bold text-nav2-grey dark:text-white mb-6">
         <span class="text-nav2-blue dark:text-nav2-blue-light">News</span> & Updates
       </h1>

@@ -10,12 +10,6 @@ Services check on detail
 Services add axamples of work, customers 
 Custom iconography on the support services
 
-About us projcet maintaince 
-About us: "We aim to establish open, community-driven collaborations within and between industry and academia to develop these industry standardized references."
-
-Contact us FAQ
-
-
 
 
 HELP with the actual words on the website to better drive adoption / commercial revenue / reach outs / interest / clear services offered / etc.

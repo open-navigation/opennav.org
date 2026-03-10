@@ -11,32 +11,65 @@ Welcome to Open Navigation LLC!
 
 ![Open Navigation Launch](/images/news/launch.png)
 
-Today marks the official launch of our company, dedicated to democratizing mobile robotics through professional-quality, open-source navigation technology.
+## Brief Recent History From Your Friendly Neighborhood Navigator
 
-## Background
+Navigation2's origins trace back to 2018, when Intel's Open Source team launched an ambitious redesign of the ROS Navigation Stack. The founding team included Steve Macenski, Matt Hansen, Mohammad Haghighipanah, Carlos Orduno, Carl Delsey, and Michael Jeronimo from Intel.
 
-Nav2 has evolved from a 2018 Intel project into the industry standard for mobile robotics navigation, used by over 100 companies globally across logistics, mining, agriculture, and aerospace sectors.
+Macenski later joined Samsung Research, eventually becoming the project's primary maintainer after Intel pivoted its robotics efforts. Over five years, the Nav2 project grew to become the world's finest navigation system, with 100+ companies adopting it across logistics, mining, agriculture, aerospace, consumer products, and other sectors.
 
-## Our Mission
+In March 2023, Macenski departed Samsung Research due to restructuring, marking the third instance where Nav2's future faced institutional uncertainty.
 
-We're here to accelerate robotics commercialization and applied research by:
+## Introducing Open Navigation LLC
 
-- **Reducing collective risk** through battle-tested navigation solutions
-- **Increasing reliability** via continuous improvement and community feedback
-- **Lowering barriers** so teams can focus on their unique value
-- **Supplying modern capabilities** that keep pace with the latest research
+Open Navigation LLC was established to provide stability for the ROS mobile robotics ecosystem. The organization operates on a sponsorship-driven model to partner with companies relying on Nav2, ensuring long-term support and development.
 
-## Our Model
+### Key Principles
 
-The company operates on a sponsorship model rather than pure consulting, aiming to maintain community focus, quality standards, and long-term stability for the Nav2 ecosystem.
+- Community-focused development
+- Quality standards as foundational values
+- Capability advancement through collaborative work
+- Revenue derived from sponsorships rather than exclusive consulting arrangements
+- No private sponsor-only forks or non-commercial licensing restrictions
 
-## Founding Sponsors
+We emphasize that pure-consulting does not fully align with the community and that sponsorships enable critical community-building and production-quality work.
 
-We're proud to announce our founding sponsors:
+## Founding Sponsors Announcement
 
-1. **Dexory** (Platinum) - Develops warehouse robotics and AI logistics solutions using Nav2's advanced controllers and planners
-2. **Polymath Robotics** (Silver) - Creates autonomous systems for heavy equipment in mining and agriculture
-3. **Stereolabs** (Silver) - Produces ZED depth cameras and perception software for robotics
+During formation, 30+ companies contacted the organization, expanding known Nav2 users from 50+ to 100+ globally across all inhabited continents.
+
+### Dexory (Platinum Sponsor)
+
+![Dexory Sponsor](/images/news/dexory-sponsor.png)
+
+Dexory develops robotics and AI logistics solutions featuring autonomous inventory collection systems. Their robot captures warehouse data up to 15 meters high to create real-time digital twins.
+
+The company leverages Nav2's MPPI Controller, Smac Planner, Behavior Trees, and multiple contextual algorithms.
+
+**Website:** [dexory.com](https://www.dexory.com/)
+
+### Polymath Robotics (Silver Sponsor)
+
+![Polymath Sponsor](/images/news/polymath-sponsor.png)
+
+Polymath creates safety-critical navigation systems for heavy industrial equipment in mining, forestry, agriculture, and shipping operations. They focus on simple and rapid deployment of autonomy by non-experts in dangerous environments.
+
+The company builds on Nav2 technology while developing specialized, proprietary capabilities.
+
+**Website:** [polymathrobotics.com](https://www.polymathrobotics.com/)
+
+### Stereolabs (Silver Sponsor)
+
+![Stereolabs Sponsor](/images/news/stereolabs-sponsor.png)
+
+Stereolabs manufactures stereo cameras with integrated vision pipelines, including the ZED sensor series powered by Nvidia Jetson modules. Their recently released ZED X is specifically designed for mobile robotics.
+
+The company provides depth sensing and perception capabilities complementary to Nav2 integration.
+
+**Website:** [stereolabs.com](https://www.stereolabs.com/)
+
+### Confidential Sponsor
+
+One unnamed sponsor supports the organization while requesting anonymity, asking only that we "keep going forward."
 
 ## Join Us
 
@@ -46,4 +79,4 @@ Check out our [sponsorship tiers](/sponsorship) or [get in touch](/contact) to d
 
 Here's to the future of mobile robotics!
 
-*- Steve Macenski, Founder*
+*— Steve Macenski, Founder*
