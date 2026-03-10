@@ -11,7 +11,6 @@ Mesh for backdrop for hero?
 1. Embrace Your Brand Colors More Boldly. Your brand has great blues that are underutilized
 Current state: The site is very white with subtle blue accents.
   Ideas:
-  Gradient hero backgrounds using your full blue palette (#47c7ef → #28aae1 → #1b75bc) instead of white-to-light-blue
   Section color blocking - alternate between white, light blue, and nav2-grey sections more dramatically
   Colored dividers - wavy SVG section dividers in your brand blue instead of flat transitions
   The balloon is your mascot - use it more! Subtle balloon silhouettes in backgrounds, balloon-inspired rounded shapes
@@ -34,6 +33,8 @@ glass cards showing some intersting affect due to color in background / behind i
 (nav2.ogr make logo go to index page; robots using fix box size)
 
 News articles are way too short and cut off content and graphics
+
+Index: Proud developeres and maintainers of Nav2
 
 Sponsor cards all the same length (X for non-included; add others)
 Sponsor page lacks important detail and context. 
