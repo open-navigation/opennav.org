@@ -1,0 +1,284 @@
+---
+// Low-poly triangular mesh background using canvas
+// Colors based on Nav2 color scheme
+---
+
+<canvas id="low-poly-canvas" class="low-poly-canvas"></canvas>
+
+<style>
+  .low-poly-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+</style>
+
+<script>
+  const canvas = document.getElementById('low-poly-canvas') as HTMLCanvasElement;
+  const ctx = canvas.getContext('2d');
+
+  if (canvas && ctx) {
+    // Nav2 color palette - more blues, less white
+    const colors = [
+      { r: 71, g: 199, b: 239, a: 0.15 },   // nav2-blue #47c7ef
+      { r: 71, g: 199, b: 239, a: 0.1 },    // nav2-blue lighter
+      { r: 71, g: 199, b: 239, a: 0.2 },    // nav2-blue stronger
+      { r: 118, g: 207, b: 229, a: 0.12 },  // nav2-blue-light #76cfe5
+      { r: 118, g: 207, b: 229, a: 0.08 },  // nav2-blue-light lighter
+      { r: 118, g: 207, b: 229, a: 0.16 },  // nav2-blue-light stronger
+      { r: 160, g: 220, b: 240, a: 0.12 },  // light cyan
+      { r: 200, g: 235, b: 248, a: 0.1 },   // very light blue
+      { r: 255, g: 255, b: 255, a: 0.05 },  // white subtle (rare)
+    ];
+
+    interface Point {
+      x: number;
+      y: number;
+      vx: number;
+      vy: number;
+      originalX: number;
+      originalY: number;
+    }
+
+    interface Triangle {
+      p1: number;
+      p2: number;
+      p3: number;
+      color: typeof colors[0];
+      targetColor: typeof colors[0];
+      colorProgress: number;
+    }
+
+    let points: Point[] = [];
+    let triangles: Triangle[] = [];
+    let animationId: number;
+    let width: number;
+    let height: number;
+
+    function resize() {
+      const rect = canvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      width = rect.width;
+      height = rect.height;
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      ctx!.scale(dpr, dpr);
+      generateMesh();
+    }
+
+    function generateMesh() {
+      points = [];
+      triangles = [];
+
+      // Grid density based on screen size
+      const cols = Math.ceil(width / 80) + 2;
+      const rows = Math.ceil(height / 80) + 2;
+      const cellWidth = width / (cols - 2);
+      const cellHeight = height / (rows - 2);
+
+      // Generate points with subtle jitter for more regular triangles
+      for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
+          // Less jitter (0.25 instead of 0.6) for more regular shapes
+          const x = (col - 0.5) * cellWidth + (Math.random() - 0.5) * cellWidth * 0.25;
+          const y = (row - 0.5) * cellHeight + (Math.random() - 0.5) * cellHeight * 0.25;
+          points.push({
+            x,
+            y,
+            vx: (Math.random() - 0.5) * 0.2,
+            vy: (Math.random() - 0.5) * 0.2,
+            originalX: x,
+            originalY: y,
+          });
+        }
+      }
+
+      // Helper to get a different color than the given ones
+      function getDifferentColor(excludeIndices: number[]): number {
+        let attempts = 0;
+        let colorIndex: number;
+        do {
+          colorIndex = Math.floor(Math.random() * colors.length);
+          attempts++;
+        } while (excludeIndices.includes(colorIndex) && attempts < 10);
+        return colorIndex;
+      }
+
+      // Track color indices for each cell to avoid adjacent same colors
+      const cellColors: number[][] = [];
+
+      // Simple Delaunay-like triangulation (grid-based for performance)
+      for (let row = 0; row < rows - 1; row++) {
+        const rowColors: number[] = [];
+        for (let col = 0; col < cols - 1; col++) {
+          const i = row * cols + col;
+          const topLeft = i;
+          const topRight = i + 1;
+          const bottomLeft = i + cols;
+          const bottomRight = i + cols + 1;
+
+          // Get colors to avoid (from adjacent cells)
+          const excludeColors: number[] = [];
+
+          // Check left neighbor's second triangle (shares edge)
+          if (col > 0 && rowColors.length >= 2) {
+            excludeColors.push(rowColors[rowColors.length - 1]);
+          }
+
+          // Check top neighbor's triangles (shares edge)
+          if (row > 0 && cellColors[row - 1]) {
+            const topCellIndex = (col * 2);
+            if (cellColors[row - 1][topCellIndex] !== undefined) {
+              excludeColors.push(cellColors[row - 1][topCellIndex]);
+            }
+            if (cellColors[row - 1][topCellIndex + 1] !== undefined) {
+              excludeColors.push(cellColors[row - 1][topCellIndex + 1]);
+            }
+          }
+
+          // Pick first triangle color avoiding neighbors
+          const colorIndex1 = getDifferentColor(excludeColors);
+
+          // Pick second triangle color avoiding first and neighbors
+          const colorIndex2 = getDifferentColor([...excludeColors, colorIndex1]);
+
+          rowColors.push(colorIndex1, colorIndex2);
+
+          const color1 = colors[colorIndex1];
+          const color2 = colors[colorIndex2];
+
+          triangles.push({
+            p1: topLeft,
+            p2: topRight,
+            p3: bottomLeft,
+            color: { ...color1 },
+            targetColor: { ...color1 },
+            colorProgress: 1,
+          });
+
+          triangles.push({
+            p1: topRight,
+            p2: bottomRight,
+            p3: bottomLeft,
+            color: { ...color2 },
+            targetColor: { ...color2 },
+            colorProgress: 1,
+          });
+        }
+        cellColors.push(rowColors);
+      }
+    }
+
+    function updatePoints() {
+      const maxDrift = 8; // Smaller drift to keep triangles more regular
+
+      for (const point of points) {
+        // Gentle drift
+        point.x += point.vx;
+        point.y += point.vy;
+
+        // Bounce back towards original position
+        const dx = point.x - point.originalX;
+        const dy = point.y - point.originalY;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist > maxDrift) {
+          point.vx -= dx * 0.015;
+          point.vy -= dy * 0.015;
+        }
+
+        // Random direction changes (less frequent)
+        if (Math.random() < 0.01) {
+          point.vx += (Math.random() - 0.5) * 0.1;
+          point.vy += (Math.random() - 0.5) * 0.1;
+        }
+
+        // Damping
+        point.vx *= 0.98;
+        point.vy *= 0.98;
+      }
+    }
+
+    function updateColors() {
+      for (const triangle of triangles) {
+        // Occasionally pick a new target color
+        if (Math.random() < 0.005) {
+          triangle.targetColor = { ...colors[Math.floor(Math.random() * colors.length)] };
+          triangle.colorProgress = 0;
+        }
+
+        // Interpolate towards target color
+        if (triangle.colorProgress < 1) {
+          triangle.colorProgress += 0.01;
+          const t = triangle.colorProgress;
+          triangle.color.r = triangle.color.r + (triangle.targetColor.r - triangle.color.r) * t * 0.05;
+          triangle.color.g = triangle.color.g + (triangle.targetColor.g - triangle.color.g) * t * 0.05;
+          triangle.color.b = triangle.color.b + (triangle.targetColor.b - triangle.color.b) * t * 0.05;
+          triangle.color.a = triangle.color.a + (triangle.targetColor.a - triangle.color.a) * t * 0.05;
+        }
+      }
+    }
+
+    function draw() {
+      ctx!.clearRect(0, 0, width, height);
+
+      for (const triangle of triangles) {
+        const p1 = points[triangle.p1];
+        const p2 = points[triangle.p2];
+        const p3 = points[triangle.p3];
+
+        ctx!.beginPath();
+        ctx!.moveTo(p1.x, p1.y);
+        ctx!.lineTo(p2.x, p2.y);
+        ctx!.lineTo(p3.x, p3.y);
+        ctx!.closePath();
+
+        const { r, g, b, a } = triangle.color;
+        ctx!.fillStyle = `rgba(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)}, ${a})`;
+        ctx!.fill();
+
+        // Very subtle edge
+        ctx!.strokeStyle = `rgba(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)}, ${a * 0.2})`;
+        ctx!.lineWidth = 0.3;
+        ctx!.stroke();
+      }
+    }
+
+    function animate() {
+      updatePoints();
+      updateColors();
+      draw();
+      animationId = requestAnimationFrame(animate);
+    }
+
+    // Initialize
+    resize();
+    animate();
+
+    // Handle resize
+    let resizeTimeout: ReturnType<typeof setTimeout>;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(resize, 150);
+    });
+
+    // Pause when not visible
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        cancelAnimationFrame(animationId);
+      } else {
+        animate();
+      }
+    });
+
+    // Respect reduced motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      cancelAnimationFrame(animationId);
+      draw(); // Just draw once, no animation
+    }
+  }
+</script>

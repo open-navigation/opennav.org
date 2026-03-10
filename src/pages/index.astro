@@ -3,6 +3,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import HeroBalloon from '@components/HeroBalloon.astro';
 import HeroVideo from '@components/HeroVideo.astro';
 import SponsorsShowcase from '@components/SponsorsShowcase.astro';
+import LowPolyBackground from '@components/LowPolyBackground.astro';
 
 const features = [
   {
@@ -67,8 +68,10 @@ const row2Images = robotImages.slice(15);
 
 <BaseLayout title="Home">
   <!-- Hero Section -->
-  <section class="relative overflow-x-clip bg-gradient-to-br from-nav2-blue/20 via-nav2-blue-medium/15 to-nav2-blue-dark/25 dark:from-nav2-blue-dark/30 dark:via-nav2-blue-medium/20 dark:to-gray-900">
-    <div class="section-container py-16 md:py-24 lg:py-32">
+  <section class="relative overflow-x-clip bg-gradient-to-br from-nav2-blue/10 via-white to-nav2-blue-light/10 dark:from-nav2-blue-dark/30 dark:via-gray-900 dark:to-gray-900">
+    <!-- Low-poly triangular mesh background -->
+    <LowPolyBackground />
+    <div class="section-container py-16 md:py-24 lg:py-32 relative z-10">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <!-- Text Content -->
         <div class="text-center lg:text-left">
@@ -121,6 +124,9 @@ const row2Images = robotImages.slice(15);
     </div>
   </section>
 
+  <!-- Blue accent divider -->
+  <div class="h-1 bg-gradient-to-r from-transparent via-nav2-blue to-transparent"></div>
+
   <!-- Quote Section -->
   <section class="bg-nav2-grey text-white py-16 md:py-20">
     <div class="section-container">
@@ -151,6 +157,9 @@ const row2Images = robotImages.slice(15);
       </div>
     </div>
   </section>
+
+  <!-- Blue accent divider -->
+  <div class="h-1 bg-gradient-to-r from-transparent via-nav2-blue to-transparent"></div>
 
   <!-- Features Section -->
   <section class="section-padding bg-gray-50 dark:bg-gray-800">
@@ -207,8 +216,9 @@ const row2Images = robotImages.slice(15);
       <div class="relative mb-6">
         <div class="carousel-row carousel-left flex gap-4">
           {[...row1Images, ...row1Images].map((robot, i) => (
-            <div class="flex-shrink-0 w-48 h-32 bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+            <div class="relative flex-shrink-0 w-48 h-32 bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
               <img src={robot.src} alt={robot.name} class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-nav2-blue/25 pointer-events-none"></div>
             </div>
           ))}
         </div>
@@ -218,8 +228,9 @@ const row2Images = robotImages.slice(15);
       <div class="relative">
         <div class="carousel-row carousel-right flex gap-4">
           {[...row2Images, ...row2Images].map((robot, i) => (
-            <div class="flex-shrink-0 w-48 h-32 bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+            <div class="relative flex-shrink-0 w-48 h-32 bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
               <img src={robot.src} alt={robot.name} class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-nav2-blue/25 pointer-events-none"></div>
             </div>
           ))}
         </div>

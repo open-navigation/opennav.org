@@ -96,9 +96,9 @@
     bottom: 95px;
     left: 50%;
     transform: translateX(-50%);
-    width: 120px;
-    height: 30px;
-    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.25) 0%, transparent 70%);
+    width: 140px;
+    height: 35px;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.2) 40%, transparent 70%);
     border-radius: 50%;
     z-index: 6;
     animation: shadow-pulse 4s ease-in-out infinite;
@@ -107,11 +107,11 @@
   @keyframes shadow-pulse {
     0%, 100% {
       transform: translateX(-50%) scale(1);
-      opacity: 0.6;
+      opacity: 0.85;
     }
     50% {
       transform: translateX(-50%) scale(0.7);
-      opacity: 0.3;
+      opacity: 0.5;
     }
   }
 
@@ -146,8 +146,8 @@
     }
 
     .balloon-shadow {
-      width: 160px;
-      height: 40px;
+      width: 180px;
+      height: 45px;
       bottom: 105px;
     }
 
@@ -182,8 +182,8 @@
     }
 
     .balloon-shadow {
-      width: 200px;
-      height: 50px;
+      width: 220px;
+      height: 55px;
       bottom: 125px;
     }
 
@@ -238,11 +238,19 @@
 
         // Shadow shrinks and fades as balloon rises
         if (shadow) {
-          shadow.style.animation = 'none';
-          const shadowScale = Math.max(1 - (scrollY / 300), 0.3);
-          const shadowOpacity = Math.max(0.6 - (scrollY / 400), 0);
-          shadow.style.transform = `translateX(-50%) scale(${shadowScale})`;
-          shadow.style.opacity = String(shadowOpacity);
+          if (scrollY < 5) {
+            // At top of page - let CSS animation run
+            shadow.style.animation = '';
+            shadow.style.transform = '';
+            shadow.style.opacity = '';
+          } else {
+            // Scrolling - disable animation and control manually
+            shadow.style.animation = 'none';
+            const shadowScale = Math.max(1 - (scrollY / 300), 0.3);
+            const shadowOpacity = Math.max(0.85 - (scrollY / 400), 0);
+            shadow.style.transform = `translateX(-50%) scale(${shadowScale})`;
+            shadow.style.opacity = String(shadowOpacity);
+          }
         }
       }
     }
