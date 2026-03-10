@@ -40,10 +40,13 @@ const robots = [
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <!-- Text Content -->
         <div class="text-center lg:text-left">
-          <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-nav2-grey dark:text-white mb-6">
-            Democratizing<br />
-            <span class="text-nav2-blue dark:text-nav2-blue-light">Mobile Robotics</span>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4">
+            <span class="text-nav2-blue dark:text-nav2-blue-light">Your Friendly</span><br />
+            <span class="text-nav2-grey dark:text-white">Neighborhood Navigators</span>
           </h1>
+          <p class="text-nav2-blue dark:text-nav2-blue-light font-semibold text-xl md:text-2xl mb-4 tracking-wide">
+            Democratizing Mobile Robotics
+          </p>
           <p class="text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-xl mx-auto lg:mx-0">
             Accelerating robotics productization and applied research through professional-quality,
             open-source navigation technology and commercial services.
@@ -74,10 +77,10 @@ const robots = [
     <div class="section-container">
       <div class="text-center mb-12 animate-on-scroll">
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-nav2-grey dark:text-white mb-4">
-          Nav2 in Action
+          Our Customers, Partners, & Users
         </h2>
         <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          See how teams around the world are using Nav2 to power their mobile robots.
+          Teams around the world use our solutions to power their robots.
         </p>
       </div>
       <div class="animate-on-scroll">
@@ -89,15 +92,24 @@ const robots = [
   <!-- Quote Section -->
   <section class="bg-nav2-grey text-white py-16 md:py-20">
     <div class="section-container">
-      <blockquote class="max-w-4xl mx-auto text-center animate-on-scroll">
-        <p class="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium italic mb-6">
-          "Nav2 will continue to be the go-to solution for mobile robot navigation in any environment."
-        </p>
-        <footer class="text-nav2-blue-light text-lg md:text-xl">
-          <cite class="not-italic font-semibold">Geoff Biggs</cite>
-          <span class="text-gray-400"> &mdash; CTO, Open Source Robotics Foundation</span>
-        </footer>
-      </blockquote>
+      <div class="max-w-6xl mx-auto flex items-center gap-6 md:gap-10 animate-on-scroll">
+        <!-- ROS Logo -->
+        <div class="flex-shrink-0 hidden md:block">
+          <img src="/images/ros-logo-white.png" alt="ROS" class="w-56 h-56 lg:w-72 lg:h-72 xl:w-80 xl:h-80 object-contain" />
+        </div>
+        <blockquote class="text-center md:text-left flex-1">
+          <p class="text-base md:text-lg lg:text-xl xl:text-2xl font-medium italic mb-6 leading-relaxed">
+            "Open Navigation has demonstrated an exceptional talent for both community management and software engineering; growing the project, interacting promptly and directly with every bug report and feature request, while simultaneously leading the development of important new features and capabilities.
+          </p>
+          <p class="text-base md:text-lg lg:text-xl xl:text-2xl font-medium italic mb-6 leading-relaxed">
+            Through Open Navigation's leadership, Nav2 continues to be the go-to solution for mobile robot navigation in any environment and provides a solid foundation for numerous new robotics ventures. I support their mission to power the democratization of mobile robotics technology."
+          </p>
+          <footer class="text-nav2-blue-light text-lg md:text-xl">
+            <cite class="not-italic font-semibold">Geoff Biggs</cite>
+            <span class="text-gray-400"> &mdash; CTO, Open Source Robotics Foundation</span>
+          </footer>
+        </blockquote>
+      </div>
     </div>
   </section>
 
