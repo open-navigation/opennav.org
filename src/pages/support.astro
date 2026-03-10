@@ -39,40 +39,40 @@ const process = [
   {
     step: 1,
     title: 'Initial Consultation',
-    description: 'We discuss your project requirements, challenges, and goals to understand how we can help.',
+    description: 'We discuss your project requirements, challenges, and goals to understand how we can help. If we\'re not the right fit, we\'ll connect you with someone in our network that is.',
   },
   {
     step: 2,
     title: 'Proposal & Planning',
-    description: 'We provide a detailed proposal outlining scope, timeline, and deliverables for your project.',
+    description: 'We provide a detailed proposal outlining scope, timeline, deliverables, and budget for your project. We\'re happy to price based on hours worked, fixed-price project, or open partnerships for long-term clients.',
   },
   {
     step: 3,
     title: 'Development & Support',
-    description: 'Our experts work with your team to implement solutions, with regular check-ins and updates.',
+    description: 'We work with your team to implement solution, with regular check-ins and updates at key milestones. Typically we work in a sandbox shared environment to protect client\'s unrelated IP.',
   },
   {
     step: 4,
     title: 'Delivery & Handoff',
-    description: 'We deliver documented solutions and ensure your team is equipped to maintain and extend them.',
+    description: 'We deliver high quality, tested, and documented solutions and ensure your team is equipped to maintain and extend them. Absolutely no corners are cut and are of equal or higher quality than Nav2 itself.',
   },
 ];
 ---
 
-<BaseLayout title="Get Support" description="Expert consulting and support services for Nav2 and mobile robot navigation.">
+<BaseLayout title="Get Support" description="Expert consulting and support services for mobile robot navigation.">
   <!-- Hero -->
   <section class="relative overflow-x-clip bg-gradient-to-br from-nav2-blue/10 via-white to-nav2-blue-light/10 dark:from-nav2-blue-dark/30 dark:via-gray-900 dark:to-gray-900 py-16 md:py-24">
     <LowPolyBackground />
     <div class="section-container text-center relative z-10">
       <h1 class="text-4xl md:text-5xl font-bold text-nav2-grey dark:text-white mb-6">
-        Expert <span class="text-nav2-blue dark:text-nav2-blue-light">Navigation Support</span>
+        Expert <span class="text-nav2-blue dark:text-nav2-blue-light">Navigation & ROS Support</span>
       </h1>
       <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-        Get direct access to the maintainers and experts behind Nav2.
-        We offer consulting, development support, and training for teams of any size.
+        Get direct access to the experts behind Nav2 with 10+ years of commercial robotics development experience.
+        We offer consulting, development, advising support, configuration and validation, training and more.
       </p>
       <a href="/contact?interest=consulting" class="btn-primary">
-        Request a Consultation
+        Contact Us
       </a>
     </div>
     <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white dark:from-gray-900 to-transparent"></div>
@@ -115,13 +115,30 @@ const process = [
           </div>
         ))}
       </div>
+
+      <!-- Don't See Something -->
+      <div class="mt-12 max-w-2xl mx-auto text-center animate-on-scroll">
+        <div class="bg-nav2-grey rounded-xl p-8">
+          <h3 class="text-xl font-semibold text-white mb-4">
+            Don't See Something You Think You Should?
+          </h3>
+          <p class="text-gray-300 mb-6">
+            Contact us to see how and if we can help! We typically focus on Nav2, Mobile Robotics,
+            and the ROS Community, but if it's a slow month, we're up for a curve ball challenge
+            to keep us on our toes.
+          </p>
+          <a href="/contact?interest=consulting" class="btn-primary">
+            Get in Touch
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Process -->
   <section class="section-padding bg-gray-50 dark:bg-gray-800">
     <div class="section-container">
-      <h2 class="text-2xl md:text-3xl font-bold text-nav2-grey dark:text-white mb-12 text-center animate-on-scroll">
+      <h2 class="text-2xl md:text-3xl font-bold text-nav2-grey dark:text-white mb-4 text-center animate-on-scroll">
         How We Work
       </h2>
 
@@ -142,37 +159,6 @@ const process = [
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Expertise -->
-  <section class="section-padding bg-white dark:bg-gray-900">
-    <div class="section-container">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-2xl md:text-3xl font-bold text-nav2-grey dark:text-white mb-8 animate-on-scroll">
-          Why Work With Us?
-        </h2>
-        <p class="text-lg text-gray-600 dark:text-gray-300 mb-12 animate-on-scroll">
-          Our team includes the original creators and primary maintainers of Nav2.
-          We bring a decade of experience in robotics across planning, control,
-          perception, localization, and architecture.
-        </p>
-
-        <div class="grid md:grid-cols-3 gap-8 text-left">
-          <div class="text-center animate-on-scroll" style="animation-delay: 0ms">
-            <div class="text-4xl font-bold text-nav2-blue dark:text-nav2-blue-light mb-2">10+</div>
-            <div class="text-gray-600 dark:text-gray-300">Years of Robotics Experience</div>
-          </div>
-          <div class="text-center animate-on-scroll" style="animation-delay: 100ms">
-            <div class="text-4xl font-bold text-nav2-blue dark:text-nav2-blue-light mb-2">100+</div>
-            <div class="text-gray-600 dark:text-gray-300">Companies Using Nav2</div>
-          </div>
-          <div class="text-center animate-on-scroll" style="animation-delay: 200ms">
-            <div class="text-4xl font-bold text-nav2-blue dark:text-nav2-blue-light mb-2">1M+</div>
-            <div class="text-gray-600 dark:text-gray-300">Downloads Per Year</div>
           </div>
         </div>
       </div>
