@@ -1,0 +1,96 @@
+---
+// Sponsors showcase component - displays sponsors by tier with logos
+interface Props {
+  showTitle?: boolean;
+  compact?: boolean;
+}
+
+const { showTitle = true, compact = false } = Astro.props;
+
+const sponsors = {
+  platinum: [
+    { name: 'Dexory', logo: '/images/sponsors/dexory.png', url: 'https://www.dexory.com/' },
+  ],
+  gold: [
+    { name: 'NVIDIA', logo: '/images/sponsors/nvidia.png', url: 'https://www.nvidia.com/' },
+    { name: 'Polymath Robotics', logo: '/images/sponsors/polymath.png', url: 'https://www.polymathrobotics.com/' },
+    { name: 'AMD', logo: '/images/sponsors/amd.png', url: 'https://www.amd.com/' },
+  ],
+  silver: [
+    { name: 'Stereolabs', logo: '/images/sponsors/stereolabs.png', url: 'https://www.stereolabs.com/' },
+    { name: '3Laws Robotics', logo: '/images/sponsors/3laws.png', url: 'https://www.3lawsrobotics.com/' },
+    { name: 'Staer AI', logo: '/images/sponsors/staer.png', url: 'https://www.staer.ai/' },
+  ],
+};
+---
+
+<div class="sponsors-showcase">
+  {showTitle && (
+    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-nav2-grey dark:text-white mb-8 md:mb-12 text-center">
+      Our Sponsors
+    </h2>
+  )}
+
+  <!-- Platinum Tier -->
+  <div class="mb-10 md:mb-12">
+    <h3 class="text-center text-sm uppercase tracking-wider text-gray-400 mb-6">Platinum</h3>
+    <div class="flex justify-center">
+      {sponsors.platinum.map((sponsor) => (
+        <a
+          href={sponsor.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block p-6 md:p-8 bg-gradient-to-br from-nav2-blue/5 to-nav2-blue/10 dark:from-nav2-blue/10 dark:to-nav2-blue/20 rounded-2xl border-2 border-nav2-blue/20 hover:border-nav2-blue/40 transition-all hover:shadow-xl hover:scale-105"
+        >
+          <img
+            src={sponsor.logo}
+            alt={sponsor.name}
+            class={compact ? "h-14 md:h-[72px] w-auto object-contain mx-auto" : "h-[72px] md:h-[92px] lg:h-28 w-auto object-contain mx-auto"}
+          />
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <!-- Gold Tier -->
+  <div class="mb-8 md:mb-10">
+    <h3 class="text-center text-sm uppercase tracking-wider text-gray-400 mb-5">Gold</h3>
+    <div class="flex flex-wrap justify-center gap-4 md:gap-5">
+      {sponsors.gold.map((sponsor) => (
+        <a
+          href={sponsor.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block p-4 md:p-6 bg-gradient-to-br from-amber-50 to-amber-100/50 dark:from-amber-900/30 dark:to-amber-800/20 rounded-xl border-2 border-amber-200/50 dark:border-amber-600/30 hover:border-amber-300 dark:hover:border-amber-500/50 transition-all hover:shadow-lg hover:scale-105"
+        >
+          <img
+            src={sponsor.logo}
+            alt={sponsor.name}
+            class={compact ? "h-10 md:h-12 w-auto object-contain mx-auto" : "h-12 md:h-16 lg:h-18 w-auto object-contain mx-auto"}
+          />
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <!-- Silver Tier -->
+  <div>
+    <h3 class="text-center text-sm uppercase tracking-wider text-gray-400 mb-4">Silver</h3>
+    <div class="flex flex-wrap justify-center gap-3 md:gap-4">
+      {sponsors.silver.map((sponsor) => (
+        <a
+          href={sponsor.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block p-3 md:p-4 bg-gray-50 dark:bg-gray-700/50 rounded-lg border border-gray-200 dark:border-gray-600 hover:border-gray-300 dark:hover:border-gray-500 transition-all hover:shadow-md hover:scale-105"
+        >
+          <img
+            src={sponsor.logo}
+            alt={sponsor.name}
+            class={compact ? "h-6 md:h-7 w-auto object-contain mx-auto" : "h-7 md:h-9 lg:h-11 w-auto object-contain mx-auto"}
+          />
+        </a>
+      ))}
+    </div>
+  </div>
+</div>

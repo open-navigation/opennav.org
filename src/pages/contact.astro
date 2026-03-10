@@ -1,0 +1,182 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import ContactForm from '@components/ContactForm.astro';
+
+// Get interest from URL params
+const interest = Astro.url.searchParams.get('interest') as 'sponsorship' | 'consulting' | null;
+---
+
+<BaseLayout title="Contact" description="Get in touch with Open Navigation LLC for sponsorship, consulting, or general inquiries.">
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-nav2-blue/10 to-white dark:from-gray-800 dark:to-gray-900 py-16 md:py-24">
+    <div class="section-container text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-nav2-grey dark:text-white mb-6">
+        Get in <span class="text-nav2-blue dark:text-nav2-blue-light">Touch</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        Have a question about sponsorship, need consulting support, or just want to say hello?
+        We'd love to hear from you.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section-padding bg-white dark:bg-gray-900">
+    <div class="section-container">
+      <div class="grid lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
+        <!-- Contact Info -->
+        <div class="lg:col-span-1 animate-on-scroll">
+          <h2 class="text-2xl font-bold text-nav2-grey dark:text-white mb-6">Contact Info</h2>
+
+          <div class="space-y-6">
+            <div>
+              <h3 class="font-semibold text-nav2-grey dark:text-white mb-2">General Inquiries</h3>
+              <a href="mailto:info@opennav.org" class="text-nav2-blue hover:underline">
+                info@opennav.org
+              </a>
+            </div>
+
+            <div>
+              <h3 class="font-semibold text-nav2-grey dark:text-white mb-2">Sponsorship</h3>
+              <a href="mailto:sponsors@opennav.org" class="text-nav2-blue hover:underline">
+                sponsors@opennav.org
+              </a>
+            </div>
+
+            <div>
+              <h3 class="font-semibold text-nav2-grey dark:text-white mb-2">Location</h3>
+              <p class="text-gray-600 dark:text-gray-300">
+                San Francisco, California<br />
+                United States
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
+              <h3 class="font-semibold text-nav2-grey dark:text-white mb-4">Resources</h3>
+              <ul class="space-y-2">
+                <li>
+                  <a href="https://docs.nav2.org" target="_blank" rel="noopener noreferrer" class="text-nav2-blue hover:underline inline-flex items-center gap-1">
+                    Nav2 Documentation
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/ros-navigation/navigation2" target="_blank" rel="noopener noreferrer" class="text-nav2-blue hover:underline inline-flex items-center gap-1">
+                    GitHub Repository
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="lg:col-span-2 animate-on-scroll" style="animation-delay: 100ms">
+          <div class="glass-card rounded-2xl p-6 md:p-8">
+            <h2 class="text-2xl font-bold text-nav2-grey dark:text-white mb-6">Send Us a Message</h2>
+            <ContactForm defaultInterest={interest || ''} />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-padding bg-gray-50 dark:bg-gray-800">
+    <div class="section-container">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-nav2-grey dark:text-white mb-8 text-center animate-on-scroll">
+          Frequently Asked Questions
+        </h2>
+
+        <div class="space-y-4">
+          <details class="glass-card rounded-lg group animate-on-scroll" style="animation-delay: 0ms">
+            <summary class="flex items-center justify-between p-6 cursor-pointer">
+              <span class="font-semibold text-nav2-grey dark:text-white">What response time should I expect?</span>
+              <svg class="w-5 h-5 text-nav2-blue transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600 dark:text-gray-300">
+              We typically respond to inquiries within 1-2 business days. Sponsors receive prioritized responses.
+            </div>
+          </details>
+
+          <details class="glass-card rounded-lg group animate-on-scroll" style="animation-delay: 100ms">
+            <summary class="flex items-center justify-between p-6 cursor-pointer">
+              <span class="font-semibold text-nav2-grey dark:text-white">Do you offer training or workshops?</span>
+              <svg class="w-5 h-5 text-nav2-blue transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600 dark:text-gray-300">
+              Yes! We offer custom training and workshops for teams. Contact us to discuss your needs.
+            </div>
+          </details>
+
+          <details class="glass-card rounded-lg group animate-on-scroll" style="animation-delay: 200ms">
+            <summary class="flex items-center justify-between p-6 cursor-pointer">
+              <span class="font-semibold text-nav2-grey dark:text-white">Can you help with non-Nav2 projects?</span>
+              <svg class="w-5 h-5 text-nav2-blue transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600 dark:text-gray-300">
+              Our expertise spans all of ROS 2 and mobile robotics. While our focus is Nav2-related work, we can discuss other robotics projects as well.
+            </div>
+          </details>
+
+          <details class="glass-card rounded-lg group animate-on-scroll" style="animation-delay: 300ms">
+            <summary class="flex items-center justify-between p-6 cursor-pointer">
+              <span class="font-semibold text-nav2-grey dark:text-white">Do you work with companies outside the US?</span>
+              <svg class="w-5 h-5 text-nav2-blue transform group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600 dark:text-gray-300">
+              Absolutely! We work with companies worldwide through remote collaboration. Our sponsor base includes organizations from across the globe.
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+    observer.observe(el);
+  });
+</script>

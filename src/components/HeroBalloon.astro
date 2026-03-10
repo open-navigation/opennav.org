@@ -1,0 +1,172 @@
+---
+// Animated hot air balloon component with NAV2 ground and shadow
+// Note: The SVG has padding in its viewBox, so we scale up and use negative margins to crop
+---
+
+<div class="hero-balloon-container">
+  <!-- Floating Balloon -->
+  <div class="hero-balloon animate-float">
+    <div class="balloon-wrapper">
+      <img
+        src="/images/logo.svg"
+        alt="Nav2 Hot Air Balloon"
+        class="balloon-img"
+      />
+    </div>
+  </div>
+
+  <!-- Shadow that pulses with the balloon -->
+  <div class="balloon-shadow"></div>
+
+  <!-- NAV2 Ground/Base -->
+  <div class="nav2-ground">
+    <img
+      src="/images/nav2-wordmark.png"
+      alt="NAV2"
+      class="nav2-wordmark"
+    />
+  </div>
+</div>
+
+<style>
+  .hero-balloon-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 350px;
+    padding-bottom: 40px;
+  }
+
+  .hero-balloon {
+    will-change: transform;
+    z-index: 10;
+  }
+
+  .balloon-wrapper {
+    /* Crop the whitespace from the SVG by scaling up and hiding overflow */
+    width: 280px;
+    height: 350px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15));
+  }
+
+  .balloon-img {
+    /* Scale up significantly to fill the wrapper */
+    width: 700px;
+    height: auto;
+    max-width: none;
+  }
+
+  .balloon-shadow {
+    position: absolute;
+    bottom: 95px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 30px;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.25) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 6;
+    animation: shadow-pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes shadow-pulse {
+    0%, 100% {
+      transform: translateX(-50%) scale(1);
+      opacity: 0.6;
+    }
+    50% {
+      transform: translateX(-50%) scale(0.7);
+      opacity: 0.3;
+    }
+  }
+
+  .nav2-ground {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+  }
+
+  .nav2-wordmark {
+    width: 35vw;
+    max-width: 280px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  @media (min-width: 768px) {
+    .hero-balloon-container {
+      min-height: 420px;
+    }
+
+    .balloon-wrapper {
+      width: 350px;
+      height: 440px;
+    }
+
+    .balloon-img {
+      width: 880px;
+    }
+
+    .balloon-shadow {
+      width: 160px;
+      height: 40px;
+      bottom: 105px;
+    }
+
+    .nav2-wordmark {
+      width: 32vw;
+      max-width: 350px;
+    }
+
+    .nav2-ground {
+      bottom: -20px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-balloon-container {
+      min-height: 480px;
+    }
+
+    .balloon-wrapper {
+      width: 420px;
+      height: 520px;
+    }
+
+    .balloon-img {
+      width: 1050px;
+    }
+
+    .balloon-shadow {
+      width: 200px;
+      height: 50px;
+      bottom: 125px;
+    }
+
+    .nav2-wordmark {
+      width: 28vw;
+      max-width: 420px;
+    }
+
+    .nav2-ground {
+      bottom: -25px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-balloon {
+      animation: none;
+    }
+    .balloon-shadow {
+      animation: none;
+    }
+  }
+</style>

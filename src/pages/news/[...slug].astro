@@ -1,0 +1,148 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('news');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const formattedDate = post.data.pubDate.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout title={post.data.title} description={post.data.description}>
+  <article>
+    <!-- Header -->
+    <section class="bg-gradient-to-br from-nav2-blue/10 to-white dark:from-gray-800 dark:to-gray-900 py-16 md:py-24">
+      <div class="section-container">
+        <div class="max-w-3xl mx-auto">
+          <a href="/news" class="inline-flex items-center gap-2 text-nav2-blue hover:underline mb-6">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to News
+          </a>
+
+          <div class="flex flex-wrap gap-2 mb-4">
+            {post.data.tags.map((tag: string) => (
+              <span class="px-3 py-1 bg-nav2-blue/10 text-nav2-blue dark:text-nav2-blue-light text-sm font-medium rounded-full">
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-nav2-grey dark:text-white mb-6">
+            {post.data.title}
+          </h1>
+
+          <div class="flex items-center gap-4 text-gray-600 dark:text-gray-300">
+            <span class="font-medium">{post.data.author}</span>
+            <span>&bull;</span>
+            <time datetime={post.data.pubDate.toISOString()}>{formattedDate}</time>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="section-padding bg-white dark:bg-gray-900">
+      <div class="section-container">
+        <div class="max-w-3xl mx-auto prose prose-lg prose-nav2 dark:prose-invert">
+          <Content />
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="bg-gray-50 dark:bg-gray-800 py-12">
+      <div class="section-container">
+        <div class="max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <h3 class="text-xl font-semibold text-nav2-grey dark:text-white mb-1">Stay Updated</h3>
+            <p class="text-gray-600 dark:text-gray-300">Follow us for more news and updates.</p>
+          </div>
+          <div class="flex gap-4">
+            <a href="/news" class="btn-outline">
+              More News
+            </a>
+            <a href="/contact" class="btn-primary">
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </article>
+</BaseLayout>
+
+<style is:global>
+  .prose-nav2 h2 {
+    @apply text-nav2-grey mt-12 mb-4;
+  }
+
+  .dark .prose-nav2 h2 {
+    @apply text-white;
+  }
+
+  .prose-nav2 h3 {
+    @apply text-nav2-grey mt-8 mb-3;
+  }
+
+  .dark .prose-nav2 h3 {
+    @apply text-white;
+  }
+
+  .prose-nav2 a {
+    @apply text-nav2-blue hover:underline;
+  }
+
+  .prose-nav2 strong {
+    @apply text-nav2-grey;
+  }
+
+  .dark .prose-nav2 strong {
+    @apply text-white;
+  }
+
+  .prose-nav2 ul {
+    @apply my-4;
+  }
+
+  .prose-nav2 li {
+    @apply my-2;
+  }
+
+  .prose-nav2 blockquote {
+    @apply border-l-4 border-nav2-blue pl-4 italic text-gray-600;
+  }
+
+  .dark .prose-nav2 blockquote {
+    @apply text-gray-300;
+  }
+
+  .prose-nav2 code {
+    @apply bg-gray-100 px-1 py-0.5 rounded text-sm;
+  }
+
+  .dark .prose-nav2 code {
+    @apply bg-gray-700 text-gray-200;
+  }
+
+  .prose-nav2 pre {
+    @apply bg-nav2-grey text-white rounded-lg p-4 overflow-x-auto;
+  }
+
+  .prose-nav2 pre code {
+    @apply bg-transparent p-0;
+  }
+</style>

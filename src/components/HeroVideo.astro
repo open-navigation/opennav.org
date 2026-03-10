@@ -1,0 +1,83 @@
+---
+interface Props {
+  src: string;
+  poster?: string;
+}
+
+const { src, poster } = Astro.props;
+---
+
+<div class="hero-video-container relative w-full rounded-2xl overflow-hidden shadow-2xl">
+  <div class="aspect-[21/9] bg-nav2-grey">
+    <video
+      id="hero-video"
+      class="w-full h-full object-cover"
+      poster={poster}
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+    >
+      <source src={src} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Play/Pause Overlay - appears on hover -->
+  <button
+    id="video-toggle"
+    class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 group"
+    aria-label="Toggle video playback"
+  >
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div id="pause-icon" class="relative z-10 w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+      <svg class="w-6 h-6 text-nav2-blue" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
+      </svg>
+    </div>
+    <div id="play-icon" class="hidden relative z-10 w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+      <svg class="w-6 h-6 text-nav2-blue ml-1" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M8 5v14l11-7z" />
+      </svg>
+    </div>
+  </button>
+
+  <!-- Subtle gradient overlay at bottom for text readability if needed -->
+  <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/30 to-transparent pointer-events-none"></div>
+</div>
+
+<script>
+  const video = document.getElementById('hero-video') as HTMLVideoElement;
+  const toggle = document.getElementById('video-toggle');
+  const playIcon = document.getElementById('play-icon');
+  const pauseIcon = document.getElementById('pause-icon');
+
+  let isPlaying = true; // Start as playing since autoplay is on
+
+  toggle?.addEventListener('click', () => {
+    if (isPlaying) {
+      video.pause();
+      playIcon?.classList.remove('hidden');
+      pauseIcon?.classList.add('hidden');
+    } else {
+      video.play();
+      playIcon?.classList.add('hidden');
+      pauseIcon?.classList.remove('hidden');
+    }
+    isPlaying = !isPlaying;
+  });
+
+  // Sync state with actual video events
+  video?.addEventListener('play', () => {
+    isPlaying = true;
+    playIcon?.classList.add('hidden');
+    pauseIcon?.classList.remove('hidden');
+  });
+
+  video?.addEventListener('pause', () => {
+    isPlaying = false;
+    playIcon?.classList.remove('hidden');
+    pauseIcon?.classList.add('hidden');
+  });
+</script>

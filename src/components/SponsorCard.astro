@@ -1,0 +1,93 @@
+---
+interface Props {
+  name: string;
+  tier: 'silver' | 'gold' | 'platinum';
+  benefits: string[];
+  highlighted?: boolean;
+}
+
+const { name, tier, benefits, highlighted = false } = Astro.props;
+
+const tierColors = {
+  silver: {
+    gradient: 'from-gray-200/40 to-gray-100/30',
+    border: 'border-white/40',
+    badge: 'bg-gray-500',
+    text: 'text-gray-600',
+    glow: '',
+  },
+  gold: {
+    gradient: 'from-amber-200/40 to-amber-100/30',
+    border: 'border-amber-200/50',
+    badge: 'bg-amber-500',
+    text: 'text-amber-700',
+    glow: 'shadow-amber-200/30',
+  },
+  platinum: {
+    gradient: 'from-nav2-blue/20 to-cyan-100/30',
+    border: 'border-nav2-blue/30',
+    badge: 'bg-nav2-blue',
+    text: 'text-nav2-blue',
+    glow: 'shadow-nav2-blue/20',
+  },
+};
+
+const colors = tierColors[tier];
+---
+
+<div class:list={[
+  'glass-card relative rounded-2xl border p-8 transition-all duration-300',
+  `bg-gradient-to-br ${colors.gradient}`,
+  colors.border,
+  highlighted && 'scale-105',
+  highlighted ? `shadow-2xl ${colors.glow}` : 'hover:shadow-xl',
+]}>
+  {highlighted && (
+    <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+      <span class="bg-nav2-blue text-white text-sm font-semibold px-4 py-1 rounded-full shadow-lg">
+        Most Popular
+      </span>
+    </div>
+  )}
+
+  <div class="text-center mb-6">
+    <span class:list={['inline-block px-4 py-1 rounded-full text-white text-sm font-semibold mb-4 shadow-md', colors.badge]}>
+      {name}
+    </span>
+    <h3 class:list={['text-2xl font-bold', colors.text]}>
+      {tier.charAt(0).toUpperCase() + tier.slice(1)} Sponsor
+    </h3>
+  </div>
+
+  <ul class="space-y-4">
+    {benefits.map((benefit) => (
+      <li class="flex items-start gap-3">
+        <svg class:list={['w-5 h-5 flex-shrink-0 mt-0.5', colors.text]} fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg>
+        <span class="text-nav2-grey dark:text-gray-200">{benefit}</span>
+      </li>
+    ))}
+  </ul>
+
+  <div class="mt-8">
+    <a
+      href="/contact?interest=sponsorship"
+      class:list={[
+        'block w-full text-center py-3 px-6 rounded-lg font-semibold transition-all duration-200',
+        tier === 'platinum'
+          ? 'bg-nav2-blue text-white hover:bg-nav2-blue-medium shadow-lg hover:shadow-xl'
+          : 'bg-nav2-grey/90 text-white hover:bg-nav2-grey shadow-md hover:shadow-lg',
+      ]}
+    >
+      Get in Touch
+    </a>
+  </div>
+</div>
+
+<style>
+  .glass-card {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+</style>

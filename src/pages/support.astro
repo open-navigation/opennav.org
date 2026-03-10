@@ -1,0 +1,229 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+const services = [
+  {
+    title: 'Navigation Architecture',
+    description: 'Design and implement robust navigation systems tailored to your robot platform and use case.',
+    icon: 'map',
+  },
+  {
+    title: 'Path Planning',
+    description: 'Custom planning algorithms and optimization for your specific operational environment.',
+    icon: 'route',
+  },
+  {
+    title: 'Localization',
+    description: 'SLAM integration, sensor fusion, and localization solutions for indoor and outdoor environments.',
+    icon: 'location',
+  },
+  {
+    title: 'Perception',
+    description: 'Obstacle detection, semantic understanding, and sensor integration for safe navigation.',
+    icon: 'eye',
+  },
+  {
+    title: 'Integration Support',
+    description: 'Help integrating Nav2 with your existing ROS 2 stack and robot hardware.',
+    icon: 'puzzle',
+  },
+  {
+    title: 'Performance Optimization',
+    description: 'Tune and optimize Nav2 for your specific compute platform and performance requirements.',
+    icon: 'speedometer',
+  },
+];
+
+const process = [
+  {
+    step: 1,
+    title: 'Initial Consultation',
+    description: 'We discuss your project requirements, challenges, and goals to understand how we can help.',
+  },
+  {
+    step: 2,
+    title: 'Proposal & Planning',
+    description: 'We provide a detailed proposal outlining scope, timeline, and deliverables for your project.',
+  },
+  {
+    step: 3,
+    title: 'Development & Support',
+    description: 'Our experts work with your team to implement solutions, with regular check-ins and updates.',
+  },
+  {
+    step: 4,
+    title: 'Delivery & Handoff',
+    description: 'We deliver documented solutions and ensure your team is equipped to maintain and extend them.',
+  },
+];
+---
+
+<BaseLayout title="Get Support" description="Expert consulting and support services for Nav2 and mobile robot navigation.">
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-nav2-blue/10 to-white dark:from-gray-800 dark:to-gray-900 py-16 md:py-24">
+    <div class="section-container text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-nav2-grey dark:text-white mb-6">
+        Expert <span class="text-nav2-blue dark:text-nav2-blue-light">Navigation Support</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
+        Get direct access to the maintainers and experts behind Nav2.
+        We offer consulting, development support, and training for teams of any size.
+      </p>
+      <a href="/contact?interest=consulting" class="btn-primary">
+        Request a Consultation
+      </a>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section-padding bg-white dark:bg-gray-900">
+    <div class="section-container">
+      <h2 class="text-2xl md:text-3xl font-bold text-nav2-grey dark:text-white mb-12 text-center animate-on-scroll">
+        Our Services
+      </h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map((service, index) => (
+          <div class="glass-card glass-card-hover rounded-xl p-6 animate-on-scroll" style={`animation-delay: ${index * 100}ms`}>
+            <div class="w-12 h-12 bg-nav2-blue/10 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-nav2-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {service.icon === 'map' && (
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                )}
+                {service.icon === 'route' && (
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                )}
+                {service.icon === 'location' && (
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                )}
+                {service.icon === 'eye' && (
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                )}
+                {service.icon === 'puzzle' && (
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+                )}
+                {service.icon === 'speedometer' && (
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                )}
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-nav2-grey dark:text-white mb-2">{service.title}</h3>
+            <p class="text-gray-600 dark:text-gray-300">{service.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section-padding bg-gray-50 dark:bg-gray-800">
+    <div class="section-container">
+      <h2 class="text-2xl md:text-3xl font-bold text-nav2-grey dark:text-white mb-12 text-center animate-on-scroll">
+        How We Work
+      </h2>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="relative">
+          <!-- Vertical line -->
+          <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-nav2-blue/20 hidden md:block"></div>
+
+          <div class="space-y-8">
+            {process.map((item, index) => (
+              <div class="relative flex gap-6 animate-on-scroll" style={`animation-delay: ${index * 150}ms`}>
+                <div class="flex-shrink-0 w-16 h-16 bg-nav2-blue rounded-full flex items-center justify-center text-white text-2xl font-bold z-10">
+                  {item.step}
+                </div>
+                <div class="flex-grow pt-2">
+                  <h3 class="text-xl font-semibold text-nav2-grey dark:text-white mb-2">{item.title}</h3>
+                  <p class="text-gray-600 dark:text-gray-300">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Expertise -->
+  <section class="section-padding bg-white dark:bg-gray-900">
+    <div class="section-container">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-bold text-nav2-grey dark:text-white mb-8 animate-on-scroll">
+          Why Work With Us?
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 mb-12 animate-on-scroll">
+          Our team includes the original creators and primary maintainers of Nav2.
+          We bring a decade of experience in robotics across planning, control,
+          perception, localization, and architecture.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-8 text-left">
+          <div class="text-center animate-on-scroll" style="animation-delay: 0ms">
+            <div class="text-4xl font-bold text-nav2-blue dark:text-nav2-blue-light mb-2">10+</div>
+            <div class="text-gray-600 dark:text-gray-300">Years of Robotics Experience</div>
+          </div>
+          <div class="text-center animate-on-scroll" style="animation-delay: 100ms">
+            <div class="text-4xl font-bold text-nav2-blue dark:text-nav2-blue-light mb-2">100+</div>
+            <div class="text-gray-600 dark:text-gray-300">Companies Using Nav2</div>
+          </div>
+          <div class="text-center animate-on-scroll" style="animation-delay: 200ms">
+            <div class="text-4xl font-bold text-nav2-blue dark:text-nav2-blue-light mb-2">1M+</div>
+            <div class="text-gray-600 dark:text-gray-300">Downloads Per Year</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-nav2-grey text-white py-16">
+    <div class="section-container text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        Let's Build Something Great
+      </h2>
+      <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+        Tell us about your project and we'll help you find the best path forward.
+      </p>
+      <a href="/contact?interest=consulting" class="btn-primary">
+        Get Started
+      </a>
+      <p class="mt-6 text-gray-400">
+        Or email us at <a href="mailto:info@opennav.org" class="text-nav2-blue hover:underline">info@opennav.org</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+    observer.observe(el);
+  });
+</script>

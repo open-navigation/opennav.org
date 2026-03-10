@@ -1,0 +1,243 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import HeroBalloon from '@components/HeroBalloon.astro';
+import HeroVideo from '@components/HeroVideo.astro';
+import SponsorsShowcase from '@components/SponsorsShowcase.astro';
+
+const features = [
+  {
+    title: 'Reduce Collective Risk',
+    description: 'Leverage battle-tested navigation solutions used by 100+ companies worldwide.',
+    icon: 'shield',
+  },
+  {
+    title: 'Increase Reliability',
+    description: 'Built on years of real-world deployment experience and continuous improvement.',
+    icon: 'check-circle',
+  },
+  {
+    title: 'Lower Barriers',
+    description: 'Professional-grade robotics capabilities accessible to teams of any size.',
+    icon: 'unlock',
+  },
+  {
+    title: 'Modern Capabilities',
+    description: 'State-of-the-art planning, localization, and perception technologies.',
+    icon: 'cpu',
+  },
+];
+
+const robots = [
+  'Farmonacci', 'Pixel', 'Elroy', 'Brisa', 'MPO',
+  'Seasony', 'Angsa', 'UBR1', 'Tri', 'Rosie'
+];
+---
+
+<BaseLayout title="Home">
+  <!-- Hero Section -->
+  <section class="relative overflow-x-clip bg-gradient-to-br from-white via-nav2-blue-light/10 to-nav2-blue/20 dark:from-gray-900 dark:via-nav2-blue/10 dark:to-gray-800">
+    <div class="section-container py-16 md:py-24 lg:py-32">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Text Content -->
+        <div class="text-center lg:text-left">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-nav2-grey dark:text-white mb-6">
+            Democratizing<br />
+            <span class="text-nav2-blue dark:text-nav2-blue-light">Mobile Robotics</span>
+          </h1>
+          <p class="text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-xl mx-auto lg:mx-0">
+            Accelerating robotics commercialization and applied research through professional-quality,
+            open-source navigation technology.
+          </p>
+          <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+            <a href="/sponsorship" class="btn-primary text-lg px-8 py-4">
+              Become a Sponsor
+            </a>
+            <a href="/support" class="btn-outline text-lg px-8 py-4">
+              Get Support
+            </a>
+          </div>
+        </div>
+
+        <!-- Balloon Animation -->
+        <div class="flex justify-center lg:justify-end">
+          <HeroBalloon />
+        </div>
+      </div>
+    </div>
+
+    <!-- Decorative Elements -->
+    <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white dark:from-gray-900 to-transparent"></div>
+  </section>
+
+  <!-- Video Section -->
+  <section class="section-padding bg-white dark:bg-gray-900">
+    <div class="section-container">
+      <div class="text-center mb-12 animate-on-scroll">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-nav2-grey dark:text-white mb-4">
+          Nav2 in Action
+        </h2>
+        <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          See how teams around the world are using Nav2 to power their mobile robots.
+        </p>
+      </div>
+      <div class="animate-on-scroll">
+        <HeroVideo src="/videos/hero.mp4" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Section -->
+  <section class="bg-nav2-grey text-white py-16 md:py-20">
+    <div class="section-container">
+      <blockquote class="max-w-4xl mx-auto text-center animate-on-scroll">
+        <p class="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium italic mb-6">
+          "Nav2 will continue to be the go-to solution for mobile robot navigation in any environment."
+        </p>
+        <footer class="text-nav2-blue-light text-lg md:text-xl">
+          <cite class="not-italic font-semibold">Geoff Biggs</cite>
+          <span class="text-gray-400"> &mdash; CTO, Open Source Robotics Foundation</span>
+        </footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section-padding bg-gray-50 dark:bg-gray-800">
+    <div class="section-container">
+      <div class="text-center mb-16 animate-on-scroll">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-nav2-grey dark:text-white mb-4">
+          Why Nav2?
+        </h2>
+        <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          Built on ROS 2, Nav2 provides everything you need for autonomous mobile robot navigation.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {features.map((feature, index) => (
+          <div class="animate-on-scroll glass-card glass-card-hover p-6 md:p-8 rounded-xl" style={`animation-delay: ${index * 100}ms`}>
+            <div class="w-14 h-14 bg-nav2-blue/10 rounded-xl flex items-center justify-center mb-5">
+              <svg class="w-7 h-7 text-nav2-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {feature.icon === 'shield' && (
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                )}
+                {feature.icon === 'check-circle' && (
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                )}
+                {feature.icon === 'unlock' && (
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z" />
+                )}
+                {feature.icon === 'cpu' && (
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                )}
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-nav2-grey dark:text-white mb-3">{feature.title}</h3>
+            <p class="text-gray-600 dark:text-gray-300">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Robot Partners Section -->
+  <section class="section-padding bg-white dark:bg-gray-900">
+    <div class="section-container">
+      <div class="text-center mb-12 animate-on-scroll">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-nav2-grey dark:text-white mb-4">
+          Trusted by Industry Leaders
+        </h2>
+        <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          Powering mobile robots across agriculture, logistics, healthcare, and more.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-4 md:gap-6 animate-on-scroll">
+        {robots.map((robot) => (
+          <div class="px-6 py-3 bg-gray-100 dark:bg-gray-700 rounded-full text-nav2-grey dark:text-gray-200 font-medium text-base md:text-lg hover:bg-nav2-blue hover:text-white transition-colors cursor-default">
+            {robot}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Sponsors Section -->
+  <section class="section-padding bg-nav2-blue/5 dark:bg-gray-800">
+    <div class="section-container">
+      <div class="text-center mb-4 animate-on-scroll">
+        <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
+          Thank you to our sponsors who help keep Nav2 free and open for everyone.
+        </p>
+      </div>
+
+      <div class="animate-on-scroll">
+        <SponsorsShowcase />
+      </div>
+
+      <div class="text-center mt-12 animate-on-scroll">
+        <a href="/sponsorship" class="btn-primary text-lg px-8 py-4">
+          Become a Sponsor
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-nav2-grey text-white py-16 md:py-20">
+    <div class="section-container text-center">
+      <div class="animate-on-scroll">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+          Ready to Get Started?
+        </h2>
+        <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8">
+          Whether you need expert support, want to sponsor the project, or just want to learn more, we're here to help.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="/contact" class="btn-primary text-lg px-8 py-4">
+            Contact Us
+          </a>
+          <a href="https://nav2.org" target="_blank" rel="noopener noreferrer" class="btn-outline border-white text-white hover:bg-white hover:text-nav2-grey text-lg px-8 py-4">
+            View Documentation
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Scroll animation styles */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  // Intersection Observer for scroll animations
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      }
+    });
+  }, observerOptions);
+
+  // Observe all elements with animate-on-scroll class
+  document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+    observer.observe(el);
+  });
+</script>

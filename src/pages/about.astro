@@ -1,0 +1,241 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import SponsorsShowcase from '@components/SponsorsShowcase.astro';
+
+const expertise = [
+  'Path Planning & Optimal Control',
+  'Localization & SLAM',
+  'Perception & Sensor Fusion',
+  'ROS 2 Architecture',
+  'Behavior Trees',
+  'Mobile Robot Systems',
+];
+
+const projects = [
+  { name: 'Nav2', description: 'The premier mobile robot navigation framework for ROS 2' },
+  { name: 'SLAM Toolbox', description: 'State-of-the-art 2D SLAM solution' },
+  { name: 'Robot Localization', description: 'Multi-sensor fusion for state estimation' },
+  { name: 'rclcpp', description: 'Core ROS 2 C++ client library' },
+];
+---
+
+<BaseLayout title="About Us" description="Learn about Open Navigation LLC and our mission to democratize mobile robotics.">
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-nav2-blue/10 to-white dark:from-gray-800 dark:to-gray-900 py-16 md:py-24">
+    <div class="section-container">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-nav2-grey dark:text-white mb-6">
+          About <span class="text-nav2-blue dark:text-nav2-blue-light">Open Navigation</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300">
+          We're on a mission to democratize mobile robotics by providing professional-quality,
+          open-source navigation technology to teams of any size.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="section-padding bg-white dark:bg-gray-900">
+    <div class="section-container">
+      <div class="max-w-4xl mx-auto animate-on-scroll">
+        <h2 class="text-2xl md:text-3xl font-bold text-nav2-grey dark:text-white mb-8 text-center">
+          Our Mission
+        </h2>
+
+        <div class="prose prose-lg max-w-none text-gray-600 dark:text-gray-300">
+          <p class="text-xl leading-relaxed mb-6">
+            Open Navigation LLC was founded to accelerate robotics commercialization and applied
+            research through the democratization of professional-quality mobile robotics technologies.
+          </p>
+
+          <p class="leading-relaxed mb-6">
+            We believe that navigation should not be a barrier to building great robots. By maintaining
+            and advancing Nav2 and related projects, we aim to:
+          </p>
+
+          <ul class="space-y-4 mb-6">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-nav2-blue flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <span><strong>Reduce collective risk</strong> by providing battle-tested solutions used by hundreds of companies</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-nav2-blue flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <span><strong>Increase collective reliability</strong> through continuous improvement and community feedback</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-nav2-blue flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <span><strong>Lower barriers to entry</strong> so teams can focus on their unique value proposition</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-nav2-blue flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <span><strong>Supply modern capabilities</strong> that keep pace with the latest research and industry needs</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sponsors Section -->
+  <section class="section-padding bg-gray-50 dark:bg-gray-800">
+    <div class="section-container">
+      <div class="text-center mb-4 animate-on-scroll">
+        <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
+          Thank you to our sponsors who support the development of Nav2.
+        </p>
+      </div>
+      <div class="animate-on-scroll">
+        <SponsorsShowcase compact />
+      </div>
+      <div class="text-center mt-10 animate-on-scroll">
+        <a href="/sponsorship" class="btn-outline">
+          Learn About Sponsorship
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership -->
+  <section class="section-padding bg-white dark:bg-gray-900">
+    <div class="section-container">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-nav2-grey dark:text-white mb-12 text-center animate-on-scroll">
+          Leadership
+        </h2>
+
+        <div class="glass-card rounded-2xl p-8 md:p-12 animate-on-scroll">
+          <div class="flex flex-col md:flex-row gap-8 items-center md:items-start">
+            <div class="w-48 h-48 rounded-full overflow-hidden flex-shrink-0 shadow-lg">
+              <img
+                src="/images/steve-macenski.jpg"
+                alt="Steve Macenski"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <div class="text-center md:text-left">
+              <h3 class="text-2xl font-bold text-nav2-grey dark:text-white mb-2">Steve Macenski</h3>
+              <p class="text-nav2-blue dark:text-nav2-blue-light font-medium mb-4">Founder & Lead</p>
+
+              <p class="text-gray-600 dark:text-gray-300 mb-6">
+                Steve is a seasoned engineering leader and roboticist with a decade of experience
+                in robotics. He advocates for open information and community-driven development,
+                maintaining significant robotics infrastructure projects including Nav2, SLAM Toolbox,
+                Robot Localization, rclcpp, and more.
+              </p>
+
+              <p class="text-gray-600 dark:text-gray-300 mb-6">
+                He leads the ROS 2 Navigation Working Group and holds a position on the
+                ROS Technical Steering Committee, demonstrating substantial influence in
+                robotics community standards.
+              </p>
+
+              <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+                {expertise.map((skill) => (
+                  <span class="px-3 py-1 bg-nav2-blue/10 text-nav2-blue rounded-full text-sm">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="section-padding bg-gray-50 dark:bg-gray-800">
+    <div class="section-container">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-nav2-grey dark:text-white mb-8 text-center animate-on-scroll">
+          Projects We Maintain
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          {projects.map((project, index) => (
+            <div class="glass-card glass-card-hover rounded-xl p-6 animate-on-scroll" style={`animation-delay: ${index * 100}ms`}>
+              <h3 class="text-xl font-semibold text-nav2-grey dark:text-white mb-2">{project.name}</h3>
+              <p class="text-gray-600 dark:text-gray-300">{project.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location -->
+  <section class="section-padding bg-white dark:bg-gray-900">
+    <div class="section-container">
+      <div class="max-w-2xl mx-auto text-center animate-on-scroll">
+        <h2 class="text-2xl md:text-3xl font-bold text-nav2-grey dark:text-white mb-6">
+          Where We're Based
+        </h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 mb-4">
+          Open Navigation LLC is headquartered in San Francisco, California, USA.
+        </p>
+        <p class="text-gray-500 dark:text-gray-400">
+          We work with companies worldwide and are available for remote collaboration.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-nav2-grey text-white py-16">
+    <div class="section-container text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        Want to Work With Us?
+      </h2>
+      <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+        Whether you're looking to sponsor, need consulting support, or just want to say hello,
+        we'd love to hear from you.
+      </p>
+      <a href="/contact" class="btn-primary">
+        Get in Touch
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+    observer.observe(el);
+  });
+</script>
