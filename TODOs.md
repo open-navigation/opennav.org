@@ -2,13 +2,17 @@ Grey usage? banner?
 
 Animated navigation path - Add an SVG line that draws itself on the landing page, representing a robot's planned path from point A to B, tying into the Nav2 theme. Also tying the page scroll togeher
 
-Parallax depth on hero - Have the balloon move at a different rate than the background when scrolling, creating subtle depth. https://www.sliderrevolution.com/templates/artistic-parallax-slider/?utm_medium=inline-ad&utm_source=parallax-slider STEVE: as you scroll down, have the balloon do soething different and disppear (pop? explode with color?)
+
+  1.  Rope unfurl - Sandbags or ropes appear to drop from the basket as you scroll
+  2.  9. Cloud layers - Add subtle cloud SVGs that move at different speeds than the balloon
+
+
+
+
 
 Gradient mesh background - Replace flat gradients with animated mesh gradients (like Apple's style) using CSS or canvas. // Dotted grid pattern - Subtle grid of dots in the background (like graph paper) representing a navigation costmap.
 
 Mesh for backdrop for hero?
-
-balloon replace with something more ON-y
 
 Clients not juts nav2 user
 

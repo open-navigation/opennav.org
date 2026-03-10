@@ -4,20 +4,23 @@
 ---
 
 <div class="hero-balloon-container">
-  <!-- Floating Balloon -->
-  <div class="hero-balloon animate-float">
-    <div class="balloon-wrapper">
-      <img
-        src="/images/logo.svg"
-        alt="Nav2 Hot Air Balloon"
-        class="balloon-img"
-      />
+  <!-- Parallax wrapper for rising effect -->
+  <div class="balloon-parallax">
+    <!-- Floating Balloon with bobbing animation -->
+    <div class="hero-balloon animate-float">
+      <div class="balloon-wrapper">
+        <img
+          src="/images/logo.svg"
+          alt="Nav2 Hot Air Balloon"
+          class="balloon-img"
+        />
+      </div>
     </div>
   </div>
 
   <!-- Proud Maintainers Badge - right side, angled -->
   <div class="proud-badge">
-    <span>Proud Developers Of</span>
+    <span>By The Developers Of</span>
   </div>
 
   <!-- Shadow that pulses with the balloon -->
@@ -45,9 +48,13 @@
     margin-top: -40px;
   }
 
+  .balloon-parallax {
+    will-change: transform, opacity;
+    z-index: 10;
+  }
+
   .hero-balloon {
     will-change: transform;
-    z-index: 10;
   }
 
   .balloon-wrapper {
@@ -204,3 +211,66 @@
     }
   }
 </style>
+
+<script>
+  // Rising balloon parallax - balloon floats up faster than scroll
+  const parallaxWrapper = document.querySelector('.balloon-parallax') as HTMLElement;
+  const shadow = document.querySelector('.balloon-shadow') as HTMLElement;
+  const heroContainer = document.querySelector('.hero-balloon-container') as HTMLElement;
+
+  if (parallaxWrapper && heroContainer) {
+    const riseMultiplier = 1.25; // Balloon moves 1.25x faster than scroll
+    const maxRise = 600; // Maximum pixels the balloon can rise
+
+    function updateBalloonPosition() {
+      const scrollY = window.scrollY;
+      const containerTop = heroContainer.offsetTop;
+      const containerHeight = heroContainer.offsetHeight;
+
+      // Only apply effect when hero is in view
+      if (scrollY < containerTop + containerHeight) {
+        const rise = Math.min(scrollY * riseMultiplier, maxRise);
+        const opacity = Math.max(1 - (scrollY / 300), 0);
+
+        // Apply parallax to wrapper, keeping bobbing animation on balloon
+        parallaxWrapper.style.transform = `translateY(-${rise}px)`;
+        parallaxWrapper.style.opacity = String(opacity);
+
+        // Shadow shrinks and fades as balloon rises
+        if (shadow) {
+          shadow.style.animation = 'none';
+          const shadowScale = Math.max(1 - (scrollY / 300), 0.3);
+          const shadowOpacity = Math.max(0.6 - (scrollY / 400), 0);
+          shadow.style.transform = `translateX(-50%) scale(${shadowScale})`;
+          shadow.style.opacity = String(shadowOpacity);
+        }
+      }
+    }
+
+    // Initial update
+    updateBalloonPosition();
+
+    // Update on scroll with throttling
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateBalloonPosition();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // Respect reduced motion preference
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      parallaxWrapper.style.transform = '';
+      parallaxWrapper.style.opacity = '';
+      if (shadow) {
+        shadow.style.transform = '';
+        shadow.style.opacity = '';
+      }
+    }
+  }
+</script>
+
