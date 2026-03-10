@@ -2,15 +2,7 @@ Grey usage? banner?
 
 Animated navigation path - Add an SVG line that draws itself on the landing page, representing a robot's planned path from point A to B, tying into the Nav2 theme. Also tying the page scroll togeher
 
-
-  1.  Rope unfurl - Sandbags or ropes appear to drop from the basket as you scroll
-  2.  9. Cloud layers - Add subtle cloud SVGs that move at different speeds than the balloon
-
-
-
-
-
-Gradient mesh background - Replace flat gradients with animated mesh gradients (like Apple's style) using CSS or canvas. // Dotted grid pattern - Subtle grid of dots in the background (like graph paper) representing a navigation costmap.
+backgroudn subtle pattern for whitespace?
 
 Mesh for backdrop for hero?
 
