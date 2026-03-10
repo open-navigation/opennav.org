@@ -6,31 +6,63 @@ import SponsorsShowcase from '@components/SponsorsShowcase.astro';
 
 const features = [
   {
+    title: 'Develop Modern Capabilities',
+    description: 'State-of-the-art planning, localization, control, behavior, and perception technologies.',
+    icon: 'cpu',
+  },
+  {
     title: 'Reduce Collective Risk',
-    description: 'Leverage battle-tested navigation solutions used by 100+ companies worldwide.',
+    description: 'Support the maintenance of battle-tested navigation solutions used by 300+ companies worldwide.',
     icon: 'shield',
   },
   {
-    title: 'Increase Reliability',
+    title: 'Increase Collective Reliability',
     description: 'Built on years of real-world deployment experience and continuous improvement.',
     icon: 'check-circle',
   },
   {
-    title: 'Lower Barriers',
+    title: 'Lower Barriers for Your Team',
     description: 'Professional-grade robotics capabilities accessible to teams of any size.',
     icon: 'unlock',
   },
-  {
-    title: 'Modern Capabilities',
-    description: 'State-of-the-art planning, localization, and perception technologies.',
-    icon: 'cpu',
-  },
 ];
 
-const robots = [
-  'Farmonacci', 'Pixel', 'Elroy', 'Brisa', 'MPO',
-  'Seasony', 'Angsa', 'UBR1', 'Tri', 'Rosie'
+// Landscape-only robot images (removed vertical/humanoid robots)
+const robotImages = [
+  { name: 'Dexory', src: 'https://nav2.org/_astro/dexory.b7e3bbfb.png' },
+  { name: 'Polymath', src: 'https://nav2.org/_astro/polymath.185a35b6.png' },
+  { name: 'NovaCarter', src: 'https://nav2.org/_astro/novacarter.054a1d29.png' },
+  { name: 'Angsa', src: 'https://nav2.org/_astro/angsa.5c2eaea5.png' },
+  { name: 'Birdseye', src: 'https://nav2.org/_astro/birdseye.a8d387b0.png' },
+  { name: 'MPO 700', src: 'https://nav2.org/_astro/mpo_700.dd5d7314.png' },
+  { name: 'Polymath Boat', src: 'https://nav2.org/_astro/polymath_boat.dd18210e.png' },
+  { name: 'Rover', src: 'https://nav2.org/_astro/rover.e9944080.png' },
+  { name: 'Botronics', src: 'https://nav2.org/_astro/botronics.b421d88f.png' },
+  { name: 'Firefly', src: 'https://nav2.org/_astro/firefly.9ecc65db.png' },
+  { name: 'Kiwibot', src: 'https://nav2.org/_astro/kiwibot.aade6ad2.png' },
+  { name: 'Tailos', src: 'https://nav2.org/_astro/tailos.96525e80.png' },
+  { name: 'Karelics', src: 'https://nav2.org/_astro/karelics2.e24ba062.png' },
+  { name: 'Karelics 2', src: 'https://nav2.org/_astro/karelics.6670d7cd.png' },
+  { name: 'Datavision', src: 'https://nav2.org/_astro/datavision.4befd4a6.png' },
+  { name: 'TurtleBot 4', src: 'https://nav2.org/_astro/tb4.c9a9a018.png' },
+  { name: 'Seasony', src: 'https://nav2.org/_astro/seasony.7798955d.png' },
+  { name: 'Brisa', src: 'https://nav2.org/_astro/brisa.2b93a8e3.png' },
+  { name: 'Torch', src: 'https://nav2.org/_astro/torch.7b697a35.png' },
+  { name: 'TurtleBot 3', src: 'https://nav2.org/_astro/tb3.78f42d15.png' },
+  { name: 'Unitree Go2', src: 'https://nav2.org/_astro/go2.fd6b23b1.png' },
+  { name: 'Barn Owl', src: 'https://nav2.org/_astro/barnowl.4bafcc69.png' },
+  { name: 'TRI', src: 'https://nav2.org/_astro/tri.c5bca68f.png' },
+  { name: 'WYCA', src: 'https://nav2.org/_astro/wyca.82ef10f6.png' },
+  { name: 'Elroy', src: 'https://nav2.org/_astro/elroy.ac34a6e5.png' },
+  { name: 'TurtleBot 2', src: 'https://nav2.org/_astro/tb2.9aa4c907.png' },
+  { name: 'ACFR', src: 'https://nav2.org/_astro/ACFR.b105bb99.png' },
+  { name: 'ROSbot XL', src: 'https://nav2.org/_astro/rosbot_xl.9180a9a2.png' },
+  { name: 'Saxion', src: 'https://nav2.org/_astro/saxion.4a0ff6c8.jpeg' },
 ];
+
+// Split images into two rows (no duplicates - 15 images per row)
+const row1Images = robotImages.slice(0, 15);
+const row2Images = robotImages.slice(15);
 ---
 
 <BaseLayout title="Home">
@@ -56,7 +88,7 @@ const robots = [
               Become a Sponsor
             </a>
             <a href="/support" class="btn-outline text-lg px-8 py-4">
-              Get Support
+              Get Commercial Support
             </a>
           </div>
         </div>
@@ -93,13 +125,20 @@ const robots = [
   <section class="bg-nav2-grey text-white py-16 md:py-20">
     <div class="section-container">
       <div class="max-w-6xl mx-auto flex items-center gap-6 md:gap-10 animate-on-scroll">
-        <!-- ROS Logo -->
-        <div class="flex-shrink-0 hidden md:block">
-          <img src="/images/ros-logo-white.png" alt="ROS" class="w-56 h-56 lg:w-72 lg:h-72 xl:w-80 xl:h-80 object-contain" />
+        <!-- ROS Logo (9 dots only, cropped) -->
+        <div class="flex-shrink-0 hidden md:block relative self-stretch">
+          <!-- Sticker Badge -->
+          <div class="absolute -top-[4px] -left-24 transform -rotate-[22deg] bg-nav2-blue text-white px-8 py-3 rounded-xl shadow-lg text-lg font-bold z-10">
+            ROS Approved
+          </div>
+          <!-- Wrapper to crop to just the 9 dots (left side of image) -->
+          <div class="h-full w-72 lg:w-80 xl:w-96 overflow-hidden flex items-center">
+            <img src="/images/ros-logo-white.png" alt="ROS 9 dots" class="h-full object-cover object-left scale-[0.75] origin-left ml-[10px]" />
+          </div>
         </div>
         <blockquote class="text-center md:text-left flex-1">
           <p class="text-base md:text-lg lg:text-xl xl:text-2xl font-medium italic mb-6 leading-relaxed">
-            "Open Navigation has demonstrated an exceptional talent for both community management and software engineering; growing the project, interacting promptly and directly with every bug report and feature request, while simultaneously leading the development of important new features and capabilities.
+            "Open Navigation has demonstrated an exceptional talent for both community management and software engineering; growing the project, interacting promptly with every bug report and feature request, while simultaneously leading the development of important new features and capabilities.
           </p>
           <p class="text-base md:text-lg lg:text-xl xl:text-2xl font-medium italic mb-6 leading-relaxed">
             Through Open Navigation's leadership, Nav2 continues to be the go-to solution for mobile robot navigation in any environment and provides a solid foundation for numerous new robotics ventures. I support their mission to power the democratization of mobile robotics technology."
@@ -118,11 +157,8 @@ const robots = [
     <div class="section-container">
       <div class="text-center mb-16 animate-on-scroll">
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-nav2-grey dark:text-white mb-4">
-          Why Nav2?
+          Why Sponsor Nav2?
         </h2>
-        <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          Built on ROS 2, Nav2 provides everything you need for autonomous mobile robot navigation.
-        </p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -153,7 +189,7 @@ const robots = [
   </section>
 
   <!-- Robot Partners Section -->
-  <section class="section-padding bg-white dark:bg-gray-900">
+  <section class="section-padding bg-white dark:bg-gray-900 overflow-hidden">
     <div class="section-container">
       <div class="text-center mb-12 animate-on-scroll">
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-nav2-grey dark:text-white mb-4">
@@ -163,13 +199,30 @@ const robots = [
           Powering mobile robots across agriculture, logistics, healthcare, and more.
         </p>
       </div>
+    </div>
 
-      <div class="flex flex-wrap justify-center gap-4 md:gap-6 animate-on-scroll">
-        {robots.map((robot) => (
-          <div class="px-6 py-3 bg-gray-100 dark:bg-gray-700 rounded-full text-nav2-grey dark:text-gray-200 font-medium text-base md:text-lg hover:bg-nav2-blue hover:text-white transition-colors cursor-default">
-            {robot}
-          </div>
-        ))}
+    <!-- Carousel rows - full width, outside container -->
+    <div class="carousel-wrapper">
+      <!-- Carousel Row 1 - scrolls left continuously -->
+      <div class="relative mb-6">
+        <div class="carousel-row carousel-left flex gap-4">
+          {[...row1Images, ...row1Images].map((robot, i) => (
+            <div class="flex-shrink-0 w-48 h-32 bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+              <img src={robot.src} alt={robot.name} class="w-full h-full object-cover" loading="lazy" />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Carousel Row 2 - scrolls right continuously -->
+      <div class="relative">
+        <div class="carousel-row carousel-right flex gap-4">
+          {[...row2Images, ...row2Images].map((robot, i) => (
+            <div class="flex-shrink-0 w-48 h-32 bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+              <img src={robot.src} alt={robot.name} class="w-full h-full object-cover" loading="lazy" />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </section>
@@ -213,9 +266,6 @@ const robots = [
           <a href="/contact" class="btn-primary text-lg px-8 py-4">
             Contact Us
           </a>
-          <a href="https://nav2.org" target="_blank" rel="noopener noreferrer" class="btn-outline border-white text-white hover:bg-white hover:text-nav2-grey text-lg px-8 py-4">
-            View Documentation
-          </a>
         </div>
       </div>
     </div>
@@ -233,6 +283,58 @@ const robots = [
   .animate-on-scroll.is-visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /* Carousel wrapper - full width */
+  .carousel-wrapper {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    overflow: hidden;
+  }
+
+  /* Carousel animations - seamless continuous loop */
+  .carousel-row {
+    display: flex;
+    width: max-content;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  .carousel-left {
+    animation-name: scroll-left;
+  }
+
+  .carousel-right {
+    animation-name: scroll-right;
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes scroll-right {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .carousel-row:hover {
+    animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .carousel-row {
+      animation: none;
+    }
   }
 </style>
 

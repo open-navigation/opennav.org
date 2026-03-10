@@ -15,6 +15,11 @@
     </div>
   </div>
 
+  <!-- Proud Maintainers Badge - right side, angled -->
+  <div class="proud-badge">
+    <span>Proud Developers Of</span>
+  </div>
+
   <!-- Shadow that pulses with the balloon -->
   <div class="balloon-shadow"></div>
 
@@ -37,6 +42,7 @@
     align-items: center;
     min-height: 350px;
     padding-bottom: 40px;
+    margin-top: -40px;
   }
 
   .hero-balloon {
@@ -60,6 +66,22 @@
     width: 700px;
     height: auto;
     max-width: none;
+  }
+
+  .proud-badge {
+    position: absolute;
+    right: 50px;
+    top: 12%;
+    transform: rotate(12deg);
+    background: #47c7ef;
+    color: white;
+    padding: 12px 32px;
+    border-radius: 12px;
+    font-size: 1.125rem;
+    font-weight: 700;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    z-index: 15;
+    white-space: nowrap;
   }
 
   .balloon-shadow {
@@ -104,6 +126,7 @@
   @media (min-width: 768px) {
     .hero-balloon-container {
       min-height: 420px;
+      margin-top: -50px;
     }
 
     .balloon-wrapper {
@@ -129,11 +152,17 @@
     .nav2-ground {
       bottom: -20px;
     }
+
+    .proud-badge {
+      right: 35px;
+      top: 10%;
+    }
   }
 
   @media (min-width: 1024px) {
     .hero-balloon-container {
       min-height: 480px;
+      margin-top: -60px;
     }
 
     .balloon-wrapper {
@@ -158,6 +187,11 @@
 
     .nav2-ground {
       bottom: -25px;
+    }
+
+    .proud-badge {
+      right: 25px;
+      top: 7%;
     }
   }
 

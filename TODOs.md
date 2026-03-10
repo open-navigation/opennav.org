@@ -10,6 +10,8 @@ Mesh for backdrop for hero?
 
 balloon replace with something more ON-y
 
+Clients not juts nav2 user
+
 1. Embrace Your Brand Colors More Boldly. Your brand has great blues that are underutilized
 Current state: The site is very white with subtle blue accents.
   Ideas:
@@ -21,6 +23,10 @@ Custom iconography matching the balloon style (outlined, rounded, playful) inste
 Illustrated backgrounds - subtle robot/navigation themed patterns or circuits in section backgrounds
 Photo treatments - if you add photos, apply a consistent duotone or blue overlay filter for brand cohesion
 Asymmetric layouts - break the grid occasionally (offset images, overlapping elements)
+
+Why Nav2 descriptions
+
+Index page: Need Help? Some cards / showing our customers
 
 "We aim to establish open, community-driven collaborations within and between industry and academia to develop these industry standardized references.
 
@@ -38,8 +44,7 @@ glass cards showing some intersting affect due to color in background / behind i
 
 News articles are way too short and cut off content and graphics
 
-Index: Proud developeres and maintainers of Nav2
-Index: Supported/validated/etc by OSRF?
+Index: Proud developeres and maintainers of Nav2 --> a little awkward
 
 Sponsor cards all the same length (X for non-included; add others)
 Sponsor page lacks important detail and context. 

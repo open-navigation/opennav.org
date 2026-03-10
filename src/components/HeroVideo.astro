@@ -8,7 +8,7 @@ const { src, poster } = Astro.props;
 ---
 
 <div class="hero-video-container relative w-full rounded-2xl overflow-hidden shadow-2xl">
-  <div class="aspect-[21/9] bg-nav2-grey">
+  <div class="aspect-video bg-nav2-grey">
     <video
       id="hero-video"
       class="w-full h-full object-cover"
@@ -23,6 +23,9 @@ const { src, poster } = Astro.props;
       Your browser does not support the video tag.
     </video>
   </div>
+
+  <!-- Nav2 blue tint overlay -->
+  <div class="absolute inset-0 bg-nav2-blue/40 pointer-events-none"></div>
 
   <!-- Play/Pause Overlay - appears on hover -->
   <button
