@@ -7,24 +7,24 @@ import LowPolyBackground from '@components/LowPolyBackground.astro';
 
 const features = [
   {
-    title: 'Develop Modern Capabilities',
-    description: 'State-of-the-art planning, localization, control, behavior, and perception technologies.',
-    icon: 'cpu',
+    title: 'Additional Modern Capabilities',
+    description: 'Allows development of state-of-the-art planning, localization, control, behavior, and perception technologies - and tools.',
+    icon: 'sparkles',
   },
   {
     title: 'Reduce Collective Risk',
-    description: 'Support the maintenance of battle-tested navigation solutions used by 300+ companies worldwide.',
-    icon: 'shield',
+    description: 'Permit the long-term (10+ year) maintenance, bug fixes, and release of key supply chain dependencies to your organization.',
+    icon: 'exclamation-triangle',
   },
   {
     title: 'Increase Collective Reliability',
-    description: 'Built on years of real-world deployment experience and continuous improvement.',
-    icon: 'check-circle',
+    description: 'Facilite the combination of battle-tested, real world experiences by 300+ companies worldwide for continuous improvement.',
+    icon: 'shield',
   },
   {
-    title: 'Lower Barriers for Your Team',
-    description: 'Professional-grade robotics capabilities accessible to teams of any size.',
-    icon: 'unlock',
+    title: 'Lower Barriers for Industry & Your Team',
+    description: 'Easier hiring, technology deployment, and application-specific customization using the industry-standard framework.',
+    icon: 'bars-arrow-down',
   },
 ];
 
@@ -175,17 +175,17 @@ const row2Images = robotImages.slice(15);
           <div class="animate-on-scroll glass-card glass-card-hover p-6 md:p-8 rounded-xl" style={`animation-delay: ${index * 100}ms`}>
             <div class="w-14 h-14 bg-nav2-blue/10 rounded-xl flex items-center justify-center mb-5">
               <svg class="w-7 h-7 text-nav2-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {feature.icon === 'exclamation-triangle' && (
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                )}
                 {feature.icon === 'shield' && (
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 )}
-                {feature.icon === 'check-circle' && (
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                {feature.icon === 'bars-arrow-down' && (
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0l-3.75-3.75M17.25 21l3.75-3.75" />
                 )}
-                {feature.icon === 'unlock' && (
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z" />
-                )}
-                {feature.icon === 'cpu' && (
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                {feature.icon === 'sparkles' && (
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
                 )}
               </svg>
             </div>
