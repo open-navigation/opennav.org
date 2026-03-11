@@ -7,9 +7,7 @@ image: "/images/news/nvidia-sponsor.png"
 tags: ["Nav2", "sponsors", "nvidia"]
 ---
 
-*This is the fourth in a series of blog posts to introduce Open Navigation LLC's sponsors and partners. This is both to highlight some fantastic companies and how they leverage Nav2 to power their businesses, but also to pull the curtain back for the benefit of the community to understand the influences and priorities of key stakeholders in the ecosystem's development moving forward. We believe strongly in a high degree of transparency so we can involve, listen to, and ultimately grow the community.*
-
-## NVIDIA- Powering the Modern World with AI and Accelerated Computing
+**NVIDIA- Powering the Modern World with AI and Accelerated Computing**
 
 NVIDIA, based in Santa Clara, CA, is our first Gold-level Sponsor. They're the global leader in robotics, perception, AI, gaming, and accelerated computing that we hope we don't need to convince you of. Within the robotics space, they provide:
 
@@ -31,7 +29,7 @@ Their software and hardware are powering the AI-enabled portions of the robotics
 
 This 3D model is then converted into a Costmap - as a provided Costmap Layer - to use in Nav2 for planning and control! How cool is that! You can check out this advanced vision navigation capability [here](https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_nvblox).
 
-## Nav2 & You
+**Nav2 & You**
 
 NVIDIA's support for Nav2 and the mobile robotics ecosystem enables us to leverage their AI and accelerated computing expertise to create and maintain high-quality AI integrations within the ROS 2 ecosystem. Accelerated computing is quickly gaining popularity in mature robotics deployments. Being able to leverage this new asset in our robots easily is crucial to moving the industry forward and fully utilizing the hardware we have available to us. This means not only integrating AI detections and segmentation outputs, but also Reinforcement Learning and GPU accelerated algorithms in ROS 2 and Nav2 today that are hot spots on lower power CPUs. This area is currently lacking in Nav2 and in partnership with Nvidia, we aim to start filling that void with the latest and greatest from NVIDIA's arsenal.
 
@@ -43,7 +41,7 @@ NVIDIA has also invested in the partnership to allow for the creation of much ne
 
 </div>
 
-## On The Use of Nav2
+**On The Use of Nav2**
 
 NVIDIA is using ROS 2 and Nav2 for their internal robotics developments to bring about the AI- and Vision-based robotics future. Leveraging ROS 2's mature and industry-standard tooling and Nav2's proven autonomy system, they're breaking ground on new technologies that will become staples of the industry!
 
@@ -51,4 +49,16 @@ NVIDIA is using ROS 2 and Nav2 for their internal robotics developments to bring
 >
 > — **Gordon Grigor**, VP Isaac Software at NVIDIA.
 
-[Want to learn more about Nvidia Robotics?](https://www.nvidia.com/en-us/deep-learning-ai/industries/robotics/)
+<div style="text-align: center;">
+
+[Want to learn more about NVIDIA Robotics?](https://www.nvidia.com/en-us/deep-learning-ai/industries/robotics/)
+
+[Interested in becoming a sponsor?](https://opennav.org/sponsorship/)
+
+[Want to know more or see how we can work together?](https://opennav.org/support/)
+
+[Want to learn more about Nav2?](https://nav2.org/)
+
+[Follow Us on Linkedin!](https://www.linkedin.com/company/open-nav)
+
+</div>

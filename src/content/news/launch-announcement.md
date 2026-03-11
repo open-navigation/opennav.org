@@ -7,7 +7,15 @@ image: "/images/news/launch.png"
 tags: ["Nav2", "announcement", "company"]
 ---
 
-## Brief Recent History From Your Friendly Neighborhood Navigator
+<div style="text-align: center;">
+
+![We're Go For Launch](/images/news/launch.png)
+
+</div>
+
+
+
+**Brief Recent History From Your Friendly Neighborhood Navigator**
 
 In 2018, Intel's Open Source team started an ambitious project to fundamentally redesign the ROS Navigation Stack for the upcoming launch of the first named ROS 2 distribution. I was one of the first in the community to see this as a monumental opportunity to influence the future of both the robotics product I was working on and the industry. Together with Matt Hansen, Mohammad Haghighipanah, Carlos Orduno, Carl Delsey, and Michael Jeronimo from Intel, we built the Beta and mostly-functional…ish version of Navigation2.
 
@@ -17,7 +25,7 @@ Over the last 5 years, I turned the project's attention to community, quality, a
 
 In March 2023, I left my role as the Senior Technical Lead at Samsung Research due to restructuring in robotics efforts. This was not so dissimilar to what had happened to Intel's team years prior and those parallels have resonated with me — this is the third time the future of ROS' navigation system is in question due to a host organization losing long-term perspective or shutting down - putting 100+ companies and the broader industry at a serious risk. In order to put one of ROS' prominent ecosystems on a stable foundation, a new solution needs to be created. We however thank Samsung Research and Intel for their massive contribution to the community.
 
-## Introducing Open Navigation LLC
+**Introducing Open Navigation LLC**
 
 Open Navigation LLC was started to launch a new chapter in the ROS community and open-source mobile robotics technology. Now is the time for something new to allow the mobile robotics ecosystem to stand on its own feet like MoveIt and ROS itself did long ago — but with a characteristic twist to make the key focuses of Nav2 also our bedrock: community, quality, and capability.
 
@@ -31,13 +39,17 @@ We also offer consulting and contracting services because we understand that som
 
 Please make sure to thank our sponsors for all they do for the global robotics community! Want to become one?
 
-## We're Go For Launch! Announcing our Sponsors
+**We're Go For Launch! Announcing our Sponsors**
 
 We've been hard at work in discussions with the key stakeholders in the ROS community and in the Nav2 user-base. First off, we are deeply touched by the number of folks that reached out to us to get more involved. In all, 30+ companies we didn't know used Nav2 got in contact, which has expanded our knowledge base of companies using Nav2 from 50+ to 100+, spanning all 6 inhabited continents (yeah, I'm looking at you Antarctica). While this is our first announcement of sponsors, we're sure it won't be the last!
 
 We're excited to announce to you all our Founding Sponsors which are enabling the continued success of Nav2 and the entire ROS mobile robotics ecosystem. They are true leaders in their individual fields and without them, none of this would be possible. They've been great friends to Open Source for many years and we look forward to working with them even more closely. Please give them each a round of applause!
 
-### Dexory - Platinum Sponsor
+<div style="text-align: center;">
+
+**Dexory - Platinum Sponsor**
+
+</div>
 
 Dexory is a Platinum Sponsor which develops robotics and AI logistics solutions to drive better business decisions. Via their DexoryView platform, data regarding inventory and state is autonomously collected to build a real-time digital twin — unlocking key insights in warehouse operations. Dexory accomplishes this using an impressive robot loaded with the latest sensors which can cover up to 15m tall to capture rack state and update their digital twin in real-time.
 
@@ -47,7 +59,11 @@ The team at Dexory have been long-time partners of Nav2 and the ROS ecosystem an
 
 **Website:** [dexory.com](https://www.dexory.com/)
 
-### Polymath Robotics - Silver Sponsor
+<div style="text-align: center;">
+
+**Polymath Robotics - Silver Sponsor**
+
+</div>
 
 Polymath Robotics is a Silver Sponsor creating safety-critical navigation systems for industrial vehicles that are radically simple to enable and deploy. They convert some of the largest heavy equipment found in mining, forestry, earth moving, agriculture, shipping yards, and more into fully autonomous robots. Their products rapidly accelerate equipment to a useful & fully autonomous status while retaining the highest levels of safety.
 
@@ -57,7 +73,11 @@ Polymath's team is world-class, consisting of many folks we at Open Navigation k
 
 **Website:** [polymathrobotics.com](https://www.polymathrobotics.com/)
 
-### Stereolabs - Silver Sponsor
+<div style="text-align: center;">
+
+**Stereolabs - Silver Sponsor**
+
+</div>
 
 Stereolabs is a Silver Sponsor producing high-quality stereo cameras with a complete vision pipeline from neural depth to SLAM, 3D object tracking, AI and more. They produce the famous ZED series of sensors powered by Nvidia's Jetson modules with ranges from 0.1 - 20m perfect for robotics applications indoor or out. Armed with global shutter, externally triggerable cameras with hardware synchronized IMUs and industrial-rated enclosures, these are some of the most capable sensors on the market.
 
@@ -67,7 +87,23 @@ We're excited to see how Nav2 users can leverage the ZED sensors, perception SDK
 
 **Website:** [stereolabs.com](https://www.stereolabs.com/)
 
-### Confidential Sponsor
+<div style="text-align: center;">
+
+**Confidential Sponsor**
+
+</div>
 
 While rather unusual, we have a sponsor that is not to be named. Either way, they're helping us keep the lights on and has asked for nothing but 'keep going forward' so we solute them all the same!
 
+
+<div style="text-align: center;">
+
+[Interested in becoming a sponsor?](https://opennav.org/sponsorship/)
+
+[Want to know more or see how we can work together?](https://opennav.org/support/)
+
+[Want to learn more about Nav2?](https://nav2.org/)
+
+[Follow Us on Linkedin!](https://www.linkedin.com/company/open-nav)
+
+</div>

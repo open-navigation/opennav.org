@@ -9,13 +9,13 @@ tags: ["Nav2", "community", "survey"]
 
 Since we at Open Navigation are gluttons for punishment, we ran a survey in conjunction with ROSCon 2023 to understand what our users love, hate, and desire for the future. We want to share these results with the community in the spirit of transparency and make sure we address important points in our 2024 roadmap planning! We received responses representing 27 unique organizations using Nav2 in their products.
 
-## The Most Common Requests
+**The Most Common Requests**
 
 We received three requests that had multiple respondents desired for the future: coverage planning, more comprehensive end-to-end demos and tuning, and reference autonomy systems leveraging Nav2 for an application.
 
 <div style="text-align: center;">
 
-![Fields2Cover Concept](/images/news/f2c-concept.png)
+![Fields2Cover Concept](/images/news/f2c-concept.jpeg)
 
 </div>
 
@@ -25,7 +25,7 @@ We received three requests that had multiple respondents desired for the future:
 
 **Complete Reference Systems** - Create realistic examples of using Nav2 with autonomy systems and explain best practices with respect to the behavior trees and application layer structure. While this would be a great thing for a company to open-source a version of their deliberation layer, this is not on our roadmap plans to create and open-source since its structure and style is highly dependent on the application at hand and is outside of the scope of the navigation framework. We may one day create something similar to this as a reference, but the creation of the business logic is something out of the scope of today's Nav2 framework.
 
-## Other Requests of Notes
+**Other Requests of Notes**
 
 A few additional features were requested of note
 
@@ -37,7 +37,7 @@ A few additional features were requested of note
 
 **Pause / Resume** - It is suggested to create a "pause" state in an existing navigation task that can be later resumed. While this can be trivially done via canceling and action and reissuing the goal, it may be adventitious to have this be built-in batteries included. This could be done in the Behavior Tree, one more powerful example of configurable navigation logic provided by Nav2!
 
-## The Niche Asks
+**The Niche Asks**
 
 In rapid-fire mode, a few specialized requests were made that are self explanatory:
 
@@ -47,7 +47,7 @@ In rapid-fire mode, a few specialized requests were made that are self explanato
 - Powered-caster omni motion model support
 - Support articulated vehicles with changing footprints on state with global planner(s)
 
-## The Odds and Ends
+**The Odds and Ends**
 
 There were two requests that we received that did not fit neatly into the other categories. The first is one we already support and the second something we will inquire with OSRF at the next available opportunity.
 
@@ -55,7 +55,7 @@ The first was a request for **dynamic footprint support** in the costmap, algori
 
 The second is a **WiFi Guide for working with ROS 2**. We think this is a fabulous idea and something that could be invaluable to have as a concise to-the-point guide. Documentation regarding how to work with ROS 2 over wireless networks explicitly is sorely missing. Currently, if you run into any issues, you have to go immediately to your DDS vendor to see what might be the problem and how to resolve it in DDS configs. There are alot of common default misconfigurations for mobile robotics users that could have their resolution meaningfully streamlined with a short guide on the subject. Great idea!
 
-## Open Navigation's Roadmap Commitments from Survey
+**Open Navigation's Roadmap Commitments from Survey**
 
 We listen to our users and aim to be the best and easiest to use navigation system available. We take this feedback seriously and are committing our resources directly to resolve some of these requests outright, including:
 
@@ -75,9 +75,21 @@ We may have the opportunity to address more of these as well, but these are the 
 
 We were very happy to see broad interest from the community to get involved with their own requested features. That level of interest to 'put your money where your mouth is' is great to see!
 
-## Post-Script - How are Users Using Nav2?
+**Post-Script - How are Users Using Nav2?**
 
 In the survey, we also asked users what ROS distributions and install methods they use to get Nav2. Unsurprisingly, Humble as the current LTS distribution is the most popular install method with the majority of users. Similar numbers also receive Nav2 through the official distribution binaries. We were surprised to see the number of users still on Foxy and Galactic, which are essentially ancient history in Nav2's progression. We highly recommend the 7 respondents on Foxy & Galactic to upgrade soon!
 
 This is actionable information to us as maintainers to make sure we pay special attention to Humble to backport as much as possible to give the latest and greatest to the most users as possible!
 
+
+<div style="text-align: center;">
+
+[Interested in becoming a sponsor?](https://opennav.org/sponsorship/)
+
+[Want to know more or see how we can work together?](https://opennav.org/support/)
+
+[Want to learn more about Nav2?](https://nav2.org/)
+
+[Follow Us on Linkedin!](https://www.linkedin.com/company/open-nav)
+
+</div>

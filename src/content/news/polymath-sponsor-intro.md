@@ -7,9 +7,7 @@ image: "/images/news/polymath-intro.png"
 tags: ["Nav2", "sponsors", "polymath"]
 ---
 
-*This is the second in a series of blog posts to introduce Open Navigation LLC's sponsors and partners. This is both to highlight some fantastic companies and how they leverage Nav2 to power their businesses, but also to pull the curtain back for the benefit of the community to understand the influences and priorities of key stakeholders in the ecosystem's development moving forward. We believe strongly in a high degree of transparency so we can involve, listen to, and ultimately grow the community.*
-
-## Polymath - Automating the Heavy, Dirty, and Dangerous
+**Polymath - Automating the Heavy, Dirty, and Dangerous**
 
 Polymath Robotics is our first Silver-level Sponsor based in San Francisco, California. Founded in 2021, Polymath's founders are key industry experts: CEO Stefan Seltz-Axmacher, former CEO of Starsky Robotics and CTO Ilia Baranov, former engineering manager at Clearpath Robotics and Amazon.
 
@@ -27,13 +25,13 @@ No need to know about ROS, planning, control, or how it all comes together. They
 
 While Polymath is not currently hiring, we'd recommend you keep an eye on them. They're working on some cool stuff - real-world tonka trucks!
 
-## Nav2 & You
+**Nav2 & You**
 
 The team at Polymath works to refine and deploy Nav2, uncovering novel and relevant problems to the hardening of ROS 2 and Nav2 on large-scale industrial vehicles. They've been great partners during design discussions and providing resources to Nav2 maintainers to help the entire ROS community. Open Navigation has engaged with everyone on Polymath's staff from the CEO down to the engineering team and there is a universal sense of openness to help the community and Nav2 thrive. Their openness and collaborative spirit is a model for a productive and mutually beneficial relationship between commercial companies and open-source developers.
 
 Some current projects that Polymath is helping with include (1) future-looking GPS integrations with Fuse to replace the NavSat Transform node in Robot Localization as that package is being sunset by maintainers in the coming months and (2) Ouster lidar simulations for Gazebo including different operating modes and hardware sensor configurations. Polymath also hosts frequent events in Silicon Valley including many ROS and Nav2 users which provides a unique opportunity for cross-industry and cross-corporation knowledge sharing and collaboration.
 
-## On The Use of Nav2
+**On The Use of Nav2**
 
 Polymath leverages Nav2 as their navigation framework for core locomotion tasks - transforming heavy equipment into fully autonomous robots. They automate massive machinery of various types: ackermann, articulated, skid-steer, and tracked -- all using Nav2's provided algorithms. This includes the use of multiple Nav2 planners such as the Smac Planner's Hybrid-A* & NavFn, as well as controllers such as Regulated Pure Pursuit (RPP) & Model Predictive Path Integral. This highlights Nav2's maturity and establishes firmly that Nav2 can scale up to even the largest equipment in the world with ease. Even better still, all smaller robots in the community benefit from mature systems proven in the most extreme environments.
 
@@ -51,4 +49,16 @@ Dump trucks are required to follow lanes, sometimes unmarked beyond a path previ
 
 This mining application is not unique; these navigation styles, among others, are commonplace throughout Polymath's client's requirements. The flexibility afforded by the use of Behavior Trees in Nav2 makes switching navigation modes and creating context-dependent decisions streamlined. It allows easy use of a shared framework and set of capabilities. It is easy to not only swap between modes of autonomy, but also include application specific details like operating the heavy machinery's tools, such as lowering and raising dozer blades during the task. The behavior tree structure is the core of Polymath's - and many in the modern robotics world's - autonomy systems. It can be used to model complex freespace autonomy as well as simpler tasks comprising many steps.
 
-[Want to learn more about Polymath?](https://www.polymathrobotics.com/)
+<div style="text-align: center;">
+
+[Want to learn more about Polymath Robotics?](https://www.polymathrobotics.com/)
+
+[Interested in becoming a sponsor?](https://opennav.org/sponsorship/)
+
+[Want to know more or see how we can work together?](https://opennav.org/support/)
+
+[Want to learn more about Nav2?](https://nav2.org/)
+
+[Follow Us on Linkedin!](https://www.linkedin.com/company/open-nav)
+
+</div>

@@ -91,6 +91,10 @@ const formattedDate = post.data.pubDate.toLocaleDateString('en-US', {
 </BaseLayout>
 
 <style is:global>
+  .prose-nav2 p {
+    @apply my-6;
+  }
+
   .prose-nav2 h2 {
     @apply text-nav2-grey mt-12 mb-4;
   }
@@ -120,7 +124,11 @@ const formattedDate = post.data.pubDate.toLocaleDateString('en-US', {
   }
 
   .prose-nav2 ul {
-    @apply my-4;
+    @apply my-4 pl-6 list-disc;
+  }
+
+  .prose-nav2 ol {
+    @apply my-4 pl-6 list-decimal;
   }
 
   .prose-nav2 li {

@@ -16,7 +16,7 @@ ROS' REP (ROS Enhancement Proposals) program helps developers by standardizing s
 
 These allow us to rely on message data being in SI units, that a structured transformation tree is available, and the versions of important libraries are consistent across multiple organizations and institutions. The result are a myriad of nodes, libraries, and capabilities which users can plug-and-play quickly and easily from hundreds of federated developers worldwide!
 
-## On Quality of Service
+**On Quality of Service**
 
 ROS 2 introduces the concept of Quality of Service (QoS) from the DDS specification into developer's workflows. These are settings that impact the transport of data over a robotics system on a per-stream basis to give finite control of the network to developers. In simplified terms, we can tune the network moving our data around our computer(s) and remote server(s) with great detail. You can read more about QoS Settings [here](https://docs.ros.org/en/rolling/Concepts/About-Quality-of-Service-Settings.html).
 
@@ -39,7 +39,7 @@ While this a new and important control to ROS developers with ROS 2, but it come
 
 Hence - a new set of REP(s) are necessary to fill this gap to ensure modules remain compatible for the same easy plug-and-play that you expect from ROS!
 
-## Introducing REP 2003
+**Introducing REP 2003**
 
 REP 2003 being currently considered by the ROS Technical Steering Committee introduces a standardization of QoS settings for two important cases: global representations of the environment (i.e. occupancy grids, visual feature maps, voxel grids) and incoming sensor data (i.e. laser scans, images, IMU). In short, it proposes the following:
 
@@ -47,7 +47,7 @@ REP 2003 being currently considered by the ROS Technical Steering Committee intr
 
 **Sensor Data**: Sensor data from ROS sensor drivers should be published using the SystemDefaultQoS profile, while the subscriptions should use the SensorDataQoS profile. This is to allow for unreliable transmission of sensor data directly from source to the first processing stage.
 
-## How Does This Help Me?
+**How Does This Help Me?**
 
 I see tickets and questions on Robotics Stack Exchange multiple times a month which boil down to: your map and/or sensor data aren't coming in with compatible QoS profiles to what you are subscription is using. This will deal with that issue once and for all by establishing the standard which is already best-practices and widely in use. It formalizes tribal knowledge. Hopefully this should reduce a headache for the average ROS user that isn't necessarily a ROS developer.
 
@@ -55,3 +55,15 @@ Further, it helps future developers create their related SLAM, localization, map
 
 This is also a catalyst for further standardizations of QoS profiles in other regimes, such as QoS standardization for base commands (i.e. cmd_vel).
 
+
+<div style="text-align: center;">
+
+[Interested in becoming a sponsor?](https://opennav.org/sponsorship/)
+
+[Want to know more or see how we can work together?](https://opennav.org/support/)
+
+[Want to learn more about Nav2?](https://nav2.org/)
+
+[Follow Us on Linkedin!](https://www.linkedin.com/company/open-nav)
+
+</div>

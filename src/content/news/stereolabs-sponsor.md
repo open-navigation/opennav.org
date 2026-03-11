@@ -7,9 +7,7 @@ image: "/images/news/stereolabs.png"
 tags: ["Nav2", "sponsors", "stereolabs"]
 ---
 
-*This is the third in a series of blog posts to introduce Open Navigation LLC's sponsors and partners. This is both to highlight some fantastic companies and how they leverage Nav2 to power their businesses, but also to pull the curtain back for the benefit of the community to understand the influences and priorities of key stakeholders in the ecosystem's development moving forward. We believe strongly in a high degree of transparency so we can involve, listen to, and ultimately grow the community.*
-
-## Stereolabs - Prolific Makers of the ZED Stereo Cameras
+**Stereolabs - Prolific Makers of the ZED Stereo Cameras**
 
 Stereolabs is our second Silver-level Sponsor based in San Francisco, New York, and Paris. They produce the ZED series of cameras that are ubiquitous throughout robotics and computer vision research, industry, and education. These cameras are some of the highest quality you can find with key features like hardware synchronized IMUs, polarization filters, and wide field of view (FOV) lenses that enable modern robotics perception. Stereolabs has great documentation and support to boot!
 
@@ -27,13 +25,13 @@ No more unplugging and plugging back in! Another big selling point is that the Z
 
 <div style="text-align: center;">
 
-![ZED X Camera](/images/news/zed-x.png)
+![ZED X Camera](/images/news/zed-x.jpg)
 
 </div>
 
 P.S. They're hiring for just about every role imaginable. I've been to their offices in Paris, it's cool.
 
-## Nav2 & You
+**Nav2 & You**
 
 Stereolabs' support for Nav2 and the mobile robotics ecosystem enables us to leverage Spatial AI features to augment and improve robot behavior and support for newer types of robot platforms. Visual-inertial odometry (VIO) is a complex field with many open-source implementations of varying quality and practical functionality. Many-a-company has spent months and thousands of dollars in hardware to prototype a solution. VIO has the capability of producing high-quality odometry on platforms who either do not have wheel encoders or who's vehicle type makes wheel odometry notoriously unreliable (e.g. legged, mecanum-wheeled, skid-steer). The partnership with Stereolabs is enabling Nav2 to provide detailed documentation and tutorials about how to set up and work with VIO on your robot platform to take full advantage of VIO to reliably navigate in hours, instead of months.
 
@@ -41,8 +39,20 @@ Open Navigation's expertise and Nav2's advantage are in robotics technology; not
 
 P.S. their spatial mapping technology looks mighty interesting to us at Open Navigation as well, stay tuned ;-)
 
-## On The Use of Nav2
+**On The Use of Nav2**
 
 We have no public items to share about Stereolabs' use of Nav2 (yet), but thousands of happy ZED bots are running Nav2, bringing many different robotics products to market. However, stay tuned for later this year for a special announcement from Stereolabs which we'll revisit once public!
 
+<div style="text-align: center;">
+
 [Want to learn more about Stereolabs?](https://www.stereolabs.com/)
+
+[Interested in becoming a sponsor?](https://opennav.org/sponsorship/)
+
+[Want to know more or see how we can work together?](https://opennav.org/support/)
+
+[Want to learn more about Nav2?](https://nav2.org/)
+
+[Follow Us on Linkedin!](https://www.linkedin.com/company/open-nav)
+
+</div>

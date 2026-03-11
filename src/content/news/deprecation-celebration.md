@@ -13,13 +13,13 @@ tags: ["Nav2", "foxy", "features"]
 
 </div>
 
-## A Milestone
+**A Milestone**
 
 Foxy was the first ROS 2 distribution that we at Open Navigation LLC call product ready. After 3 years of rapid development from A-Turtle through E-Turtle releasing new distributions every 6 months, ROS 2 finally hit a level of sufficient maturity to enable longer-term support. This was the second LTS distribution of ROS 2 (after Dashing) but the first where all of the core systems and robotics tools built on top of it were stable enough for the average end-user to adopt and release quality products.
 
 Nav2 was no different. Early in 2021, we hit our critical v1.0 milestone marking the first time an average non-expert user could use the framework to build large scale robotics systems that could be deployed for long periods of time. Since then, we've seen an explosion of companies in logistics, oil/gas, mining, vertical farming, construction, and more using Nav2 to power their robot products worldwide.
 
-## The 3-Year Headache
+**The 3-Year Headache**
 
 While Foxy was the first product-ready release of Nav2, that does not mean it was perfect, nor complete for every application we support today. The Nav2 framework has been evolving at back-breaking speeds to meet the challenges of today's mobile robotics applications. While development since Humble has moved primarily towards features, algorithm plugins, and capabilities — much development occurred on the core framework since Foxy which has made maintenance and support of Foxy a perpetual headache.
 
@@ -27,13 +27,13 @@ For good software practice, we cannot backport all the latest-and-greatest chang
 
 In the case of Foxy, this divergence was quick, soon after release, making it virtually impossible to make new features available to end-users. We tried our best to support Foxy users while also balancing stability and a desire to quickly develop the system, but it has been a struggle over the past 3 years — until now!
 
-## 🎉 A Cause for Celebration 🎉
+**🎉 A Cause for Celebration 🎉**
 
 With June 2023, Foxy is now end of life — no longer receiving support or updates from OSRF. This major milestone is a cause for celebration across the ROS community. First, it gives us a chance to be retrospective of all that we have accomplished since the first product-ready ROS 2 distribution. So many new tools, optimizations, and ROS 2 companies have emerged. Second, it coincides with the release of Iron Irwini, the latest ROS 2 distribution! Which means one very important thing: stickers
 
 <div style="text-align: center;">
 
-![ROS Distribution Stickers](/images/news/ros-stickers.png)
+![ROS Distribution Stickers](/images/news/ros-stickers.jpg)
 
 </div>
 
@@ -57,3 +57,14 @@ A special thanks to the team at [Open Robotics](https://www.linkedin.com/company
 
 We suspect we'll say "Please upgrade to Jazzy or newer" a few times, but such is the nature of progress 😁! Rest in Peace Foxy, we can take it from here.
 
+<div style="text-align: center;">
+
+[Interested in becoming a sponsor?](https://opennav.org/sponsorship/)
+
+[Want to know more or see how we can work together?](https://opennav.org/support/)
+
+[Want to learn more about Nav2?](https://nav2.org/)
+
+[Follow Us on Linkedin!](https://www.linkedin.com/company/open-nav)
+
+</div>
