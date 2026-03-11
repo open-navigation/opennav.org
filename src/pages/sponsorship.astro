@@ -3,6 +3,8 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import SponsorCard from '@components/SponsorCard.astro';
 import LowPolyBackground from '@components/LowPolyBackground.astro';
 
+const base = import.meta.env.BASE_URL;
+
 const generalBenefits = [
   'Commitment to keep Nav2 open and free',
   'Continued development of capabitilities and applications in Nav2',
@@ -236,7 +238,7 @@ const tiers = {
       <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
         Contact us to discuss the best sponsorship option for your organization.
       </p>
-      <a href="/contact?interest=sponsorship" class="btn-primary">
+      <a href={`${base}contact?interest=sponsorship`} class="btn-primary">
         Contact Us About Sponsorship
       </a>
       <p class="mt-6 text-gray-400">

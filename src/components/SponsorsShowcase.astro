@@ -6,25 +6,26 @@ interface Props {
 }
 
 const { showTitle = true, compact = false } = Astro.props;
+const base = import.meta.env.BASE_URL;
 
 const sponsors = {
   platinum: [
-    { name: 'Dexory', logo: '/images/sponsors/dexory.png', url: 'https://www.dexory.com/' },
+    { name: 'Dexory', logo: 'images/sponsors/dexory.png', url: 'https://www.dexory.com/' },
   ],
   gold: [
-    { name: 'NVIDIA', logo: '/images/sponsors/nvidia.png', url: 'https://www.nvidia.com/' },
-    { name: 'Polymath Robotics', logo: '/images/sponsors/polymath.png', url: 'https://www.polymathrobotics.com/' },
-    { name: 'AMD', logo: '/images/sponsors/amd.png', url: 'https://www.amd.com/' },
+    { name: 'NVIDIA', logo: 'images/sponsors/nvidia.png', url: 'https://www.nvidia.com/' },
+    { name: 'Polymath Robotics', logo: 'images/sponsors/polymath.png', url: 'https://www.polymathrobotics.com/' },
+    { name: 'AMD', logo: 'images/sponsors/amd.png', url: 'https://www.amd.com/' },
   ],
   silver: [
-    { name: 'Stereolabs', logo: '/images/sponsors/stereolabs.png', url: 'https://www.stereolabs.com/' },
-    { name: '3Laws Robotics', logo: '/images/sponsors/3laws.png', url: 'https://www.3lawsrobotics.com/' },
-    { name: 'Staer AI', logo: '/images/sponsors/staer.png', url: 'https://www.staer.ai/' },
+    { name: 'Stereolabs', logo: 'images/sponsors/stereolabs.png', url: 'https://www.stereolabs.com/' },
+    { name: '3Laws Robotics', logo: 'images/sponsors/3laws.png', url: 'https://www.3lawsrobotics.com/' },
+    { name: 'Staer AI', logo: 'images/sponsors/staer.png', url: 'https://www.staer.ai/' },
   ],
   friends: [
-    { name: 'Rover Robotics', logo: '/images/sponsors/rover.png', url: 'https://roverrobotics.com/' },
-    { name: 'Botronics', logo: '/images/sponsors/botronics.png', url: 'https://botronics.tech/' },
-    { name: 'Barn Owl Tech', logo: '/images/sponsors/barnowl.png', url: 'https://barnowltech.com/' },
+    { name: 'Rover Robotics', logo: 'images/sponsors/rover.png', url: 'https://roverrobotics.com/' },
+    { name: 'Botronics', logo: 'images/sponsors/botronics.png', url: 'https://botronics.tech/' },
+    { name: 'Barn Owl Tech', logo: 'images/sponsors/barnowl.png', url: 'https://barnowltech.com/' },
   ],
 };
 ---
@@ -48,7 +49,7 @@ const sponsors = {
           class="block p-6 md:p-8 bg-gradient-to-br from-nav2-blue/5 to-nav2-blue/10 dark:from-nav2-blue/10 dark:to-nav2-blue/20 rounded-2xl border-2 border-nav2-blue/20 hover:border-nav2-blue/40 transition-all hover:shadow-xl hover:scale-105"
         >
           <img
-            src={sponsor.logo}
+            src={`${base}${sponsor.logo}`}
             alt={sponsor.name}
             class={compact ? "h-[62px] md:h-[79px] w-auto object-contain mx-auto" : "h-[79px] md:h-[101px] lg:h-[123px] w-auto object-contain mx-auto"}
           />
@@ -69,7 +70,7 @@ const sponsors = {
           class="block p-4 md:p-6 bg-gradient-to-br from-amber-50 to-amber-100/50 dark:from-amber-900/30 dark:to-amber-800/20 rounded-xl border-2 border-amber-200/50 dark:border-amber-600/30 hover:border-amber-300 dark:hover:border-amber-500/50 transition-all hover:shadow-lg hover:scale-105"
         >
           <img
-            src={sponsor.logo}
+            src={`${base}${sponsor.logo}`}
             alt={sponsor.name}
             class={compact ? "h-[38px] md:h-[46px] w-auto object-contain mx-auto" : "h-[46px] md:h-[61px] lg:h-[68px] w-auto object-contain mx-auto"}
           />
@@ -90,7 +91,7 @@ const sponsors = {
           class="block p-3 md:p-4 bg-gray-50 dark:bg-gray-700/50 rounded-lg border border-gray-200 dark:border-gray-600 hover:border-gray-300 dark:hover:border-gray-500 transition-all hover:shadow-md hover:scale-105"
         >
           <img
-            src={sponsor.logo}
+            src={`${base}${sponsor.logo}`}
             alt={sponsor.name}
             class={compact ? "h-[23px] md:h-[27px] w-auto object-contain mx-auto" : "h-[27px] md:h-[34px] lg:h-[42px] w-auto object-contain mx-auto"}
           />
@@ -110,7 +111,7 @@ const sponsors = {
             class="block p-2 bg-gray-50/50 dark:bg-gray-700/30 rounded border border-gray-200/50 dark:border-gray-600/50 hover:border-gray-300 dark:hover:border-gray-500 transition-all hover:shadow-sm hover:scale-105"
           >
             <img
-              src={sponsor.logo}
+              src={`${base}${sponsor.logo}`}
               alt={sponsor.name}
               class="h-[14px] md:h-[17px] w-auto object-contain mx-auto opacity-80 hover:opacity-100 transition-opacity"
             />

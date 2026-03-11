@@ -12,6 +12,7 @@ interface Props {
 }
 
 const { name, tier, benefits, highlighted = false } = Astro.props;
+const base = import.meta.env.BASE_URL;
 
 // Normalize benefits to always be Benefit objects
 const normalizedBenefits: Benefit[] = benefits.map(b =>
@@ -88,7 +89,7 @@ const colors = tierColors[tier];
 
   <div class="mt-8">
     <a
-      href="/contact?interest=sponsorship"
+      href={`${base}contact?interest=sponsorship`}
       class:list={[
         'block w-full text-center py-3 px-6 rounded-lg font-semibold transition-all duration-200',
         tier === 'platinum'

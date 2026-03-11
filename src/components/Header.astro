@@ -1,10 +1,11 @@
 ---
+const base = import.meta.env.BASE_URL;
 const navLinks = [
-  { href: '/sponsorship', label: 'Sponsorship' },
-  { href: '/support', label: 'Get Support' },
-  { href: '/news', label: 'News' },
-  { href: '/about', label: 'About Us' },
-  { href: '/contact', label: 'Contact' },
+  { href: `${base}sponsorship`, label: 'Sponsorship' },
+  { href: `${base}support`, label: 'Get Support' },
+  { href: `${base}news`, label: 'News' },
+  { href: `${base}about`, label: 'About Us' },
+  { href: `${base}contact`, label: 'Contact' },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -14,8 +15,8 @@ const currentPath = Astro.url.pathname;
   <div class="section-container">
     <nav class="flex items-center justify-between h-20 md:h-24">
       <!-- Logo -->
-      <a href="/" class="flex items-center">
-        <img src="/images/open-navigation-logo.svg" alt="Open Navigation" class="h-14 md:h-18 lg:h-20 w-auto" />
+      <a href={base} class="flex items-center">
+        <img src={`${import.meta.env.BASE_URL}images/open-navigation-logo.svg`} alt="Open Navigation" class="h-14 md:h-18 lg:h-20 w-auto" />
       </a>
 
       <!-- Desktop Navigation -->

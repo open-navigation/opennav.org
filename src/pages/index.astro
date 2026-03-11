@@ -5,6 +5,8 @@ import HeroVideo from '@components/HeroVideo.astro';
 import SponsorsShowcase from '@components/SponsorsShowcase.astro';
 import LowPolyBackground from '@components/LowPolyBackground.astro';
 
+const base = import.meta.env.BASE_URL;
+
 const features = [
   {
     title: 'Additional Modern Capabilities',
@@ -92,10 +94,10 @@ const row2Images = robotImages.slice(15);
             open-source navigation technology and commercial services.
           </p>
           <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
-            <a href="/sponsorship" class="btn-primary text-lg px-8 py-4">
+            <a href={`${base}sponsorship`} class="btn-primary text-lg px-8 py-4">
               Become a Sponsor
             </a>
-            <a href="/support" class="btn-outline text-lg px-8 py-4">
+            <a href={`${base}support`} class="btn-outline text-lg px-8 py-4">
               Get Commercial Support
             </a>
           </div>
@@ -124,7 +126,7 @@ const row2Images = robotImages.slice(15);
         </p>
       </div>
       <div class="animate-on-scroll">
-        <HeroVideo src="/videos/hero.mp4" />
+        <HeroVideo src={`${import.meta.env.BASE_URL}videos/hero.mp4`} />
       </div>
     </div>
   </section>
@@ -144,7 +146,7 @@ const row2Images = robotImages.slice(15);
           </div>
           <!-- Wrapper to crop to just the 9 dots (left side of image) -->
           <div class="h-full w-72 lg:w-80 xl:w-96 overflow-hidden flex items-center">
-            <img src="/images/ros-logo-white.png" alt="ROS 9 dots" class="h-full object-cover object-left scale-[0.75] origin-left ml-[10px]" />
+            <img src={`${import.meta.env.BASE_URL}images/ros-logo-white.png`} alt="ROS 9 dots" class="h-full object-cover object-left scale-[0.75] origin-left ml-[10px]" />
           </div>
         </div>
         <blockquote class="text-center md:text-left flex-1">
@@ -214,7 +216,7 @@ const row2Images = robotImages.slice(15);
             We are the experts in Nav2 and ROS mobility. We offer consulting, development, integration, training, and more with over a decade of successful commercial
             robotics experience.
           </p>
-          <a href="/support" class="btn-primary text-lg px-8 py-4">
+          <a href={`${base}support`} class="btn-primary text-lg px-8 py-4">
             Learn About Our Services
           </a>
         </div>
@@ -267,7 +269,7 @@ const row2Images = robotImages.slice(15);
   <section class="section-padding bg-nav2-blue/5 dark:bg-gray-800 relative overflow-hidden">
     <!-- Backdrop Image -->
     <div class="absolute inset-0 flex items-center justify-center opacity-[0.03] dark:opacity-[0.02]">
-      <img src="/images/grey-backdrop.png" alt="" class="w-3/4 h-auto object-contain" aria-hidden="true" />
+      <img src={`${import.meta.env.BASE_URL}images/grey-backdrop.png`} alt="" class="w-3/4 h-auto object-contain" aria-hidden="true" />
     </div>
     <div class="section-container relative z-10">
       <div class="text-center mb-4 animate-on-scroll">
@@ -281,7 +283,7 @@ const row2Images = robotImages.slice(15);
       </div>
 
       <div class="text-center mt-12 animate-on-scroll">
-        <a href="/sponsorship" class="btn-primary text-lg px-8 py-4">
+        <a href={`${base}sponsorship`} class="btn-primary text-lg px-8 py-4">
           Become a Sponsor
         </a>
       </div>
@@ -299,7 +301,7 @@ const row2Images = robotImages.slice(15);
           Whether you need expert support, want to sponsor Nav2, or just want to learn more, we're here to help.
         </p>
         <div class="flex flex-wrap justify-center gap-4">
-          <a href="/contact" class="btn-primary text-lg px-8 py-4">
+          <a href={`${base}contact`} class="btn-primary text-lg px-8 py-4">
             Contact Us
           </a>
         </div>

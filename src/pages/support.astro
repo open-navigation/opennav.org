@@ -50,15 +50,16 @@ const services = [
   },
 ];
 
+const base = import.meta.env.BASE_URL;
 const customers = [
-  { name: 'Amazon', logo: '/images/customers/amazon.png' },
-  { name: 'Nvidia', logo: '/images/customers/nvidia.png' },
-  { name: 'AMD', logo: '/images/customers/amd.png' },
-  { name: 'Dexory', logo: '/images/customers/dexory.png' },
-  { name: 'Polymath', logo: '/images/customers/polymath.png' },
-  { name: 'Bonsai Robotics', logo: '/images/customers/bonsai-robotics.svg' },
-  { name: '6 River Systems', logo: '/images/customers/6-river-systems.png' },
-  { name: 'Rotate8', logo: '/images/customers/rotate8.png' },
+  { name: 'Amazon', logo: 'images/customers/amazon.png' },
+  { name: 'Nvidia', logo: 'images/customers/nvidia.png' },
+  { name: 'AMD', logo: 'images/customers/amd.png' },
+  { name: 'Dexory', logo: 'images/customers/dexory.png' },
+  { name: 'Polymath', logo: 'images/customers/polymath.png' },
+  { name: 'Bonsai Robotics', logo: 'images/customers/bonsai-robotics.svg' },
+  { name: '6 River Systems', logo: 'images/customers/6-river-systems.png' },
+  { name: 'Rotate8', logo: 'images/customers/rotate8.png' },
 ];
 
 const process = [
@@ -97,7 +98,7 @@ const process = [
         Get direct access to the experts behind Nav2 with 10+ years of commercial robotics development experience.
         We offer consulting, development, advising support, configuration and validation, training and more.
       </p>
-      <a href="/contact?interest=consulting" class="btn-primary">
+      <a href={`${base}contact?interest=consulting`} class="btn-primary">
         Contact Us
       </a>
     </div>
@@ -168,7 +169,7 @@ const process = [
             and the ROS Community, but if it's a slow month, we're up for a curve ball challenge
             to keep us on our toes.
           </p>
-          <a href="/contact?interest=consulting" class="btn-primary">
+          <a href={`${base}contact?interest=consulting`} class="btn-primary">
             Get in Touch
           </a>
         </div>
@@ -219,7 +220,7 @@ const process = [
         {customers.map((customer, index) => (
           <div class="flex items-center justify-center p-4 animate-on-scroll" style={`animation-delay: ${index * 100}ms`}>
             <img
-              src={customer.logo}
+              src={`${base}${customer.logo}`}
               alt={customer.name}
               class="max-h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 dark:brightness-0 dark:invert"
             />
@@ -238,7 +239,7 @@ const process = [
       <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
         Tell us about your project and we'll help you find the best path forward.
       </p>
-      <a href="/contact?interest=consulting" class="btn-primary">
+      <a href={`${base}contact?interest=consulting`} class="btn-primary">
         Get Started
       </a>
       <p class="mt-6 text-gray-400">
