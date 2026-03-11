@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import NewsArticleSponsors from '@components/NewsArticleSponsors.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('news');
@@ -60,6 +61,9 @@ const formattedDate = post.data.pubDate.toLocaleDateString('en-US', {
       <div class="section-container">
         <div class="max-w-3xl mx-auto prose prose-lg prose-nav2 dark:prose-invert">
           <Content />
+        </div>
+        <div class="max-w-5xl mx-auto">
+          <NewsArticleSponsors />
         </div>
       </div>
     </section>
@@ -145,5 +149,19 @@ const formattedDate = post.data.pubDate.toLocaleDateString('en-US', {
 
   .prose-nav2 pre code {
     @apply bg-transparent p-0;
+  }
+
+  /* Center iframes (videos) in prose content */
+  .prose-nav2 iframe {
+    @apply mx-auto block;
+  }
+
+  /* Center content in text-align: center divs */
+  .prose-nav2 div[style*="text-align: center"] {
+    @apply flex flex-col items-center;
+  }
+
+  .prose-nav2 div[style*="text-align: center"] iframe {
+    @apply mx-auto;
   }
 </style>

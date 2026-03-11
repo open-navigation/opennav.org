@@ -1,52 +1,36 @@
 ---
 title: "Announcing AMD - Nav2 Gold Sponsor"
-description: "We're thrilled to announce AMD as our newest Gold Sponsor, bringing their hardware expertise to the Nav2 ecosystem."
+description: "AMD - Gold Sponsor"
 pubDate: 2025-10-27
-author: "Steve Macenski"
+author: "Steven Macenski"
 image: "/images/news/amd-sponsor.png"
-tags: ["sponsor", "announcement"]
+tags: ["Nav2", "sponsors", "amd"]
 ---
 
-We're excited to announce that AMD has joined Open Navigation as a Gold Sponsor!
+Open Navigation is excited to announce a new collaboration with AMD, a global leader in high-performance and adaptive computing technologies. AMD has become a strategic sponsor and Gold Sponsor to support and advance the Nav2 stack — the open-source navigation framework deployed by over 300 companies worldwide in production. The growing AMR robotics and embedded portfolio including adaptive SoCs, FPGAs, AMD Ryzen™ Embedded CPUs, and Radeon™ GPUs uniquely positions the company to drive innovation at the intersection of hardware acceleration and autonomous navigation.
 
-![AMD Gold Sponsor](/images/news/amd-sponsor.png)
+Nav2 has become a cornerstone for autonomous mobile robots (AMRs) and service robots built on the ROS 2 ecosystem. From research labs to industrial deployments, Nav2 enables robots to move intelligently through complex environments — planning, controlling, and navigating with flexibility and reliability. This sponsorship will help Open Navigation enhance performance, scalability, and real-time capabilities across a diverse range of compute platforms from edge devices to high-performance embedded systems for the entire mobile robotics industry.
 
-## Strategic Partnership
+<div style="text-align: center;">
 
-Open Navigation announced a new partnership where AMD has become a strategic Gold Sponsor supporting Nav2, an open-source navigation framework used by over 300 companies in production. The collaboration leverages AMD's portfolio including adaptive SoCs, FPGAs, AMD Ryzen Embedded CPUs, and Radeon GPUs to advance autonomous mobile robot (AMR) navigation capabilities.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ooINfBOx5CY?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen title="Open Navigation - AMD: Drive By Snaps"></iframe>
 
-## Context on Nav2
+![AMD supported technology demonstration showcasing Ryzen AI-powered autonomy using ROS 2, Nav2 performing real-time 3D urban mobility.](/images/news/amd-demo.png)
 
-Nav2 serves as a cornerstone technology for autonomous and service robots built on the ROS 2 ecosystem. The framework enables robots to navigate complex environments through planning, control, and intelligent movement. This sponsorship aims to enhance performance, scalability, and real-time capabilities across diverse computing platforms.
+*AMD supported technology demonstration showcasing Ryzen AI-powered autonomy using ROS 2, Nav2 performing real-time 3D urban mobility. [Find more information here.](https://github.com/open-navigation/opennav_amd_demonstrations)*
 
-## Collaboration Focus Areas
+</div>
 
-AMD will work with the Open Navigation community to:
+Through this engagement, AMD will collaborate closely with the Open Navigation community to:
 
-- **Optimize Nav2 performance** for AMD adaptive SoCs, FPGAs, CPUs, and GPUs
-- **Enable hardware-accelerated path planning and sensor fusion** using AMD's parallel computing capabilities
-- **Contribute to open-source development** for heterogeneous compute platforms
-- **Support long-term Nav2 sustainability** through engineering and ecosystem contributions
+- Optimize Nav2 performance for AMD adaptive SoCs, FPGAs, CPUs, and GPUs.
 
-![AMD Technology Demonstration](/images/news/amd-demo.png)
+- Enable hardware-accelerated path planning and sensor fusion, leveraging the parallel compute capabilities of AMD devices.
 
-*Ryzen AI-powered autonomy using ROS 2, Nav2 performing real-time 3D urban mobility*
+- Contribute to open-source development, ensuring that next-generation robots can deploy Nav2 efficiently across heterogeneous compute platforms.
 
-## What This Means
+- Support long-term sustainability of Nav2 through dedicated engineering and ecosystem contributions.
 
-As a Gold Sponsor, AMD will:
+As a sponsor, AMD joins a growing network of organizations investing in the open-source robotics ecosystem. This collaboration reinforces the shared vision of building accessible, high-performance navigation frameworks for robots of all shapes and sizes from research prototypes to commercial deployments.
 
-- Have direct access to Nav2 maintainers for technical discussions
-- Receive monthly updates on Nav2 development progress
-- Get first access to new features with integration support
-- Participate in roadmap planning discussions
-
-## Broader Impact
-
-AMD joins a network of organizations investing in the open-source robotics ecosystem, reinforcing the shared vision of building accessible, high-performance navigation frameworks.
-
-This partnership will help ensure Nav2 continues to perform optimally on AMD hardware, benefiting the entire robotics community.
-
-Thank you, AMD, for your commitment to open-source robotics!
-
-**Learn more:** [AMD Robotics](https://www.amd.com/en/solutions/robotics.html)
+[Want to learn more about AMD in Robotics?](https://www.amd.com/en/solutions/robotics.html)

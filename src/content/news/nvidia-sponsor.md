@@ -1,49 +1,54 @@
 ---
 title: "Nvidia - Sponsor Introductions P.IV"
-description: "Introducing NVIDIA as a Nav2 sponsor, bringing GPU acceleration and AI capabilities to mobile robot navigation."
+description: "Nvidia - Sponsor Introductions P.IV"
 pubDate: 2024-03-11
-author: "Steve Macenski"
+author: "Steven Macenski"
 image: "/images/news/nvidia-sponsor.png"
-tags: ["sponsor", "announcement"]
+tags: ["Nav2", "sponsors", "nvidia"]
 ---
 
-We're proud to introduce NVIDIA as Open Navigation LLC's first Gold-level Sponsor!
+*This is the fourth in a series of blog posts to introduce Open Navigation LLC's sponsors and partners. This is both to highlight some fantastic companies and how they leverage Nav2 to power their businesses, but also to pull the curtain back for the benefit of the community to understand the influences and priorities of key stakeholders in the ecosystem's development moving forward. We believe strongly in a high degree of transparency so we can involve, listen to, and ultimately grow the community.*
 
-![NVIDIA Sponsor](/images/news/nvidia-sponsor.png)
+## NVIDIA- Powering the Modern World with AI and Accelerated Computing
 
-## NVIDIA's Robotics Offerings
+NVIDIA, based in Santa Clara, CA, is our first Gold-level Sponsor. They're the global leader in robotics, perception, AI, gaming, and accelerated computing that we hope we don't need to convince you of. Within the robotics space, they provide:
 
-NVIDIA, headquartered in Santa Clara, California, provides several robotics solutions:
+- **Isaac Sim**, a photo-realistic GPU accelerated simulator suitable for humanoids, mobile robotics, and manipulation. It's used for synthetic data generation to train AI models, reinforcement learning to train the robot brain, and robot simulation for functional testing.
 
-- **Isaac Sim:** A photo-realistic GPU-accelerated simulator for humanoids, mobile robotics, and manipulation tasks, enabling synthetic data generation and reinforcement learning
-- **Isaac ROS:** Hardware-accelerated ROS 2 packages for autonomous robots leveraging Jetson platforms
-- **NITROS:** A hardware-accelerated transportation layer for ROS 2 data streaming
-- **Jetson:** An AI computing platform for GPU-accelerated edge computing in robotics applications
+- **Isaac ROS**, a collection of hardware-accelerated, high performance, low latency ROS 2 packages for making autonomous robots which leverage the power of Jetson and other NVIDIA platforms.
 
-## Integration with Nav2
+- **NITROS**, a hardware-accelerated transportation layer for ROS 2 to stream data through ROS graphs without repeated copies on-and-off the GPU.
 
-NVIDIA's vision technology creates 3D models converted into costmaps for Nav2 planning and control.
+- **Jetson**, an AI computing platform for GPU accelerated computing. Jetson is commonly used in robotics and edge-computing applications requiring a low-power mobile GPU to run inferencing of AI models or GPU accelerated computations.
+
+Their software and hardware are powering the AI-enabled portions of the robotics industry. Below you can see one of NVIDIA's provided applications using their Jetson platform to run real-time AI depth estimation and 3D reconstruction to create a world model.
+
+<div style="text-align: center;">
 
 ![NVIDIA AI Depth Estimation](/images/news/nvidia-depth.gif)
 
-The company provides an Open Navigation-approved Nav2 integration with the Segway Nova Carter robot platform.
+</div>
+
+This 3D model is then converted into a Costmap - as a provided Costmap Layer - to use in Nav2 for planning and control! How cool is that! You can check out this advanced vision navigation capability [here](https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_nvblox).
+
+## Nav2 & You
+
+NVIDIA's support for Nav2 and the mobile robotics ecosystem enables us to leverage their AI and accelerated computing expertise to create and maintain high-quality AI integrations within the ROS 2 ecosystem. Accelerated computing is quickly gaining popularity in mature robotics deployments. Being able to leverage this new asset in our robots easily is crucial to moving the industry forward and fully utilizing the hardware we have available to us. This means not only integrating AI detections and segmentation outputs, but also Reinforcement Learning and GPU accelerated algorithms in ROS 2 and Nav2 today that are hot spots on lower power CPUs. This area is currently lacking in Nav2 and in partnership with Nvidia, we aim to start filling that void with the latest and greatest from NVIDIA's arsenal.
+
+NVIDIA has also invested in the partnership to allow for the creation of much needed mobile robotics deployed capabilities which everyone (even if you don't use a Jetson or Nvidia GPU) can benefit from! More on that at a later date ;-) They've even provided an Open Navigation-approved Nav2 integration with the new Segway Nova Carter robot platform!
+
+<div style="text-align: center;">
 
 ![Nova Carter Robot](/images/news/nova-carter.png)
 
-## Strategic Partnership Value
+</div>
 
-The partnership enables Nav2 to integrate AI-accelerated computing capabilities into ROS 2 robotics deployments. This addresses current gaps in handling GPU-intensive algorithms on lower-power CPUs.
+## On The Use of Nav2
 
-## NVIDIA's Use of Nav2
+NVIDIA is using ROS 2 and Nav2 for their internal robotics developments to bring about the AI- and Vision-based robotics future. Leveraging ROS 2's mature and industry-standard tooling and Nav2's proven autonomy system, they're breaking ground on new technologies that will become staples of the industry!
 
-> "Nav2 is fundamental for Isaac to prove out our accelerated computing capabilities on robot to provide a commercial grade solution."
+> "Nav2 is fundamental for Isaac prove out our accelerated computing capabilities on robot to provide a commercial grade solution for adoption into your own robot"
 >
-> — **Gordon Grigor**, VP Isaac Software at NVIDIA
+> — **Gordon Grigor**, VP Isaac Software at NVIDIA.
 
-## What This Partnership Means
-
-With NVIDIA's support, we can continue to optimize Nav2 for GPU acceleration, ensuring that teams can leverage the full power of modern hardware for their navigation needs.
-
-Their expertise in parallel computing aligns perfectly with the performance demands of real-time robot navigation.
-
-Thank you, NVIDIA, for supporting the Nav2 community!
+[Want to learn more about Nvidia Robotics?](https://www.nvidia.com/en-us/deep-learning-ai/industries/robotics/)

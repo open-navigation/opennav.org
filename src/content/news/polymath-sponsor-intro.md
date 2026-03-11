@@ -1,102 +1,54 @@
 ---
 title: "Polymath - Sponsor Introductions P.II"
-description: "Introducing Polymath Robotics as a Nav2 sponsor, making autonomous vehicles accessible to everyone."
+description: "Polymath - Sponsor Introductions P.II"
 pubDate: 2023-09-08
-author: "Steve Macenski"
+author: "Steven Macenski"
 image: "/images/news/polymath-intro.png"
-tags: ["sponsor", "announcement"]
+tags: ["Nav2", "sponsors", "polymath"]
 ---
 
-This is the second installment in our series introducing Open Navigation LLC's sponsors and partners. Our goal involves highlighting companies leveraging Nav2 technology while providing community transparency about ecosystem stakeholders' influences and priorities.
+*This is the second in a series of blog posts to introduce Open Navigation LLC's sponsors and partners. This is both to highlight some fantastic companies and how they leverage Nav2 to power their businesses, but also to pull the curtain back for the benefit of the community to understand the influences and priorities of key stakeholders in the ecosystem's development moving forward. We believe strongly in a high degree of transparency so we can involve, listen to, and ultimately grow the community.*
 
-![Polymath Robotics](/images/news/polymath-intro.png)
+## Polymath - Automating the Heavy, Dirty, and Dangerous
 
-## Polymath Robotics Overview
+Polymath Robotics is our first Silver-level Sponsor based in San Francisco, California. Founded in 2021, Polymath's founders are key industry experts: CEO Stefan Seltz-Axmacher, former CEO of Starsky Robotics and CTO Ilia Baranov, former engineering manager at Clearpath Robotics and Amazon.
 
-**Location:** San Francisco, California
+Their talented team creates safety-critical navigation systems for industrial vehicles that are radically simple to enable and deploy. They fill an important gap in the autonomy ecosystem by providing safe autonomy systems to traditionally ignored sectors due to their high risk nature. They convert some of the largest heavy equipment found in mining, forestry, earth moving, agriculture, shipping yards, and more into fully autonomous robots.
 
-**Founded:** 2021
+Polymath's product consists of all the usual elements of autonomous navigation, but provided over an easy-to-use and familiar REST API that can be consumed easily by non-robotics experts. The API endpoints control the autonomous vehicles, called Synapses. For example, their /gps-waypoints API receives a POST from an application containing 1+ waypoints in json format along with task metadata such as maximum speed and if reversing is allowed. This command is bridged to their central command center, named Cortex (brilliant naming schema), over a set of custom ROS 2 interfaces. Cortex contains a complex proprietary behavior tree which decides to either queue, process, or reject this command. If/when the command is sent, Cortex issues the GPS waypoint instruction to Nav2 via the NavigateThroughPoses interface. The feedback status from Nav2 are processed within Cortex and provided back to an application as REST GET commands along with general vehicle telemetry. Finally, the task completion is sent to the client application once Nav2 is finished.
 
-**Leadership:**
-- **CEO:** Stefan Seltz-Axmacher (formerly Starsky Robotics CEO)
-- **CTO:** Ilia Baranov (former engineering manager at Clearpath Robotics and Amazon)
-
-**Mission:** Creating safety-critical navigation systems for industrial vehicles with emphasis on simplicity and deployment ease.
-
-**Focus Areas:** Autonomy systems for mining, forestry, earth moving, agriculture, and shipping yards industries.
-
-## Product Architecture
-
-Polymath's system uses a REST API interface for non-robotics experts. Key components include:
-
-- **Synapses:** Autonomous vehicles controlled via API
-- **API Endpoints:** `/gps-waypoints` accepts POST requests with waypoint data and task metadata (maximum speed, reversing permissions)
-- **Cortex:** Central command center using custom ROS 2 interfaces and proprietary behavior trees
-- **Nav2 Integration:** Receives GPS waypoint instructions via NavigateThroughPoses interface
+<div style="text-align: center;">
 
 ![System Architecture Diagram](/images/news/polymath-architecture.png)
 
-The system processes feedback from Nav2 and provides status updates and vehicle telemetry back to client applications as REST GET commands.
+</div>
 
-## Nav2 Collaboration
+No need to know about ROS, planning, control, or how it all comes together. They work with clients to develop a strategy to perform their particular automation task utilizing reusable primitives and capabilities across a broad set of industrial vehicles to scale to new and unseen challenges. Further, safety and performance are tracked at all times to provide peace of mind, data to make improvements, and unprecedented traceability.
 
-Polymath contributes to Nav2 development through:
+While Polymath is not currently hiring, we'd recommend you keep an eye on them. They're working on some cool stuff - real-world tonka trucks!
 
-1. **GPS Integrations:** Working on future-looking GPS integrations with Fuse to replace NavSat Transform nodes as Robot Localization is being sunset
-2. **Sensor Simulations:** Developing Ouster lidar simulations for Gazebo with various operating modes and hardware configurations
-3. **Community Events:** Hosting frequent Silicon Valley events for cross-industry knowledge sharing among ROS and Nav2 users
+## Nav2 & You
 
-## Nav2 Usage Details
+The team at Polymath works to refine and deploy Nav2, uncovering novel and relevant problems to the hardening of ROS 2 and Nav2 on large-scale industrial vehicles. They've been great partners during design discussions and providing resources to Nav2 maintainers to help the entire ROS community. Open Navigation has engaged with everyone on Polymath's staff from the CEO down to the engineering team and there is a universal sense of openness to help the community and Nav2 thrive. Their openness and collaborative spirit is a model for a productive and mutually beneficial relationship between commercial companies and open-source developers.
 
-### Vehicle Types Supported
+Some current projects that Polymath is helping with include (1) future-looking GPS integrations with Fuse to replace the NavSat Transform node in Robot Localization as that package is being sunset by maintainers in the coming months and (2) Ouster lidar simulations for Gazebo including different operating modes and hardware sensor configurations. Polymath also hosts frequent events in Silicon Valley including many ROS and Nav2 users which provides a unique opportunity for cross-industry and cross-corporation knowledge sharing and collaboration.
 
-- Ackermann vehicles
-- Articulated machinery
-- Skid-steer equipment
-- Tracked vehicles
+## On The Use of Nav2
 
-### Planners Utilized
+Polymath leverages Nav2 as their navigation framework for core locomotion tasks - transforming heavy equipment into fully autonomous robots. They automate massive machinery of various types: ackermann, articulated, skid-steer, and tracked -- all using Nav2's provided algorithms. This includes the use of multiple Nav2 planners such as the Smac Planner's Hybrid-A* & NavFn, as well as controllers such as Regulated Pure Pursuit (RPP) & Model Predictive Path Integral. This highlights Nav2's maturity and establishes firmly that Nav2 can scale up to even the largest equipment in the world with ease. Even better still, all smaller robots in the community benefit from mature systems proven in the most extreme environments.
 
-- Smac Planner's Hybrid-A* algorithm
-- NavFn planner
+Polymath typically utilizes the Hybrid-A* planner in conjunction with freespace navigation behaviors when a vehicle needs to intelligently navigate a scene of dynamic obstacles and changing environments given the practical driving constraints on Ackermann and Articulated machinery. NavFn and RPP are employed with Teach-and-Repeat or previously demarcated GPS via-points to create restricted navigation behavior where a robot must follow a marked route precisely. Since these routes are previously driven or marked with practical constraints in mind, NavFn's infeasibility is not a concern and excels for this task by always remaining in the center of marked footprint swept regions.
 
-### Controllers Used
+An illustrative example of a Polymath application that requires not just one but both styles of autonomy is found in the mining industry.
 
-- Regulated Pure Pursuit (RPP)
-- Model Predictive Path Integral
+Dump trucks are required to follow lanes, sometimes unmarked beyond a path previously traveled by other equipment, to safely traverse the mine. Once within the pit of the mine, the vehicle must transition into a dynamic autonomy mode to circumnavigate personnel and other equipment operating which are constantly moving and changing throughout the day. Further, Polymath has additional context-sensitive optimizations which are made based on the internal robot state and external environmental conditions.
 
-### Navigation Modes
+<div style="text-align: center;">
 
-The company employs dual autonomy approaches:
+![Mining Application](/images/news/polymath-mining.png)
 
-**Hybrid-A\* with Freespace Navigation:** Intelligently navigating scenes of dynamic obstacles.
+</div>
 
-**NavFn with RPP:** Handles teach-and-repeat or GPS via-points for precise route following where NavFn's infeasibility is not a concern given pre-marked constraints.
+This mining application is not unique; these navigation styles, among others, are commonplace throughout Polymath's client's requirements. The flexibility afforded by the use of Behavior Trees in Nav2 makes switching navigation modes and creating context-dependent decisions streamlined. It allows easy use of a shared framework and set of capabilities. It is easy to not only swap between modes of autonomy, but also include application specific details like operating the heavy machinery's tools, such as lowering and raising dozer blades during the task. The behavior tree structure is the core of Polymath's - and many in the modern robotics world's - autonomy systems. It can be used to model complex freespace autonomy as well as simpler tasks comprising many steps.
 
-## Application Example: Mining Operations
-
-![Mining Application Diagram](/images/news/polymath-mining.png)
-
-Dump trucks must follow unmarked lanes through mines while adapting to dynamic environments. The system switches between:
-
-- **Lane-following mode:** Precise path adherence using NavFn
-- **Dynamic autonomy mode:** Circumnavigating personnel and equipment
-
-Context-sensitive optimizations adjust based on internal robot state and environmental conditions. The behavior tree structure enables switching autonomy modes while coordinating equipment operations like blade positioning.
-
-## Key Capabilities
-
-The behavior tree approach supports:
-
-- Complex freespace autonomy modeling
-- Simple multi-step task sequences
-- Application-specific machinery controls
-- Mode switching and context-dependent decisions
-
-## Looking Forward
-
-We're excited to work with the Polymath team and explore how their platform and Nav2 can complement each other.
-
-Thank you, Polymath, for believing in open-source robotics!
-
-**Learn more:** [polymathrobotics.com](https://www.polymathrobotics.com/)
+[Want to learn more about Polymath?](https://www.polymathrobotics.com/)

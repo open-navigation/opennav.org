@@ -1,47 +1,28 @@
 ---
 title: "Polymath Robotics - Newest Gold Sponsor!"
-description: "Polymath Robotics joins as a Gold Sponsor, strengthening our mission to democratize mobile robotics."
+description: "Polymath - Gold Sponsor"
 pubDate: 2025-01-03
-author: "Steve Macenski"
+author: "Steven Macenski"
 image: "/images/news/polymath-gold.png"
-tags: ["sponsor", "announcement"]
+tags: ["Nav2", "sponsors", "polymath"]
 ---
 
-We're delighted to welcome Polymath Robotics as our newest Gold Sponsor!
+## An Expanded Partnership - Gold Sponsor of Nav2!
 
-![Polymath Robotics Gold Sponsor](/images/news/polymath-gold.png)
+We are proud to announce our expanded partnership with Polymath Robotics! They are Nav2's newest Gold-level Sponsor helping usher in a strong 2025 for Nav2, ROS 2, and the open-source community. This expanded partnership will accelerate Open Navigation by providing additional needed resources for maintaining and developing key robotics capabilities which they rely on for their products and services. The closer partnership also helps Polymath by providing additional engineering and technical support to advance their mission of general off-road autonomy - as well as enabling expanded quality and support for the Nav2 and adjacent software packages they rely upon.
 
-> "From a purely financial approach, working with our open source dependencies makes sense. Much of the thankless work Open Navigation performs is work we would have to spend significantly more on."
->
-> — **Ilia Baranov**, CTO of Polymath Robotics
+CEO Stefan Seltz-Axmacher and CTO Ilia Baranov are pioneering leaders in robotics technologies and understand the key importance that open-source software plays in their business and success.
 
-## Expanded Partnership
+## Polymath Robotics - Automating the Heavy, Dirty, and Dangerous
 
-Open Navigation has announced an expanded partnership with Polymath Robotics, making them Nav2's newest Gold-level Sponsor. This partnership aims to strengthen Nav2, ROS 2, and the open-source community in 2025. The collaboration provides Polymath with enhanced engineering support and technical assistance for their off-road autonomy mission, while Open Navigation receives resources for maintaining robotics capabilities.
+Based in San Francisco, Polymath creates safety-critical navigation systems for industrial vehicles that are radically simple to enable and deploy. They fill an important gap in the autonomy ecosystem by providing safe autonomy systems to traditionally ignored sectors due to their high risk nature. They convert some of the largest heavy equipment found in mining, forestry, earth moving, agriculture, shipping yards, and more into fully autonomous robots.
 
-Leadership includes CEO Stefan Seltz-Axmacher and CTO Ilia Baranov.
+Polymath's product consists of advanced elements of autonomous navigation, but provided over an easy-to-use and familiar REST API that can be consumed easily by non-robotics experts.
 
-> "Nav2 powers Polymath's 2025 goals: better deployments, bigger deployments, and larger fleets. All depends on rock-solid code quality. We trust Open Navigation ensures extensive testing, routine deployment, bug fixes."
->
-> — **Ilia Baranov**, CTO of Polymath Robotics
+<div style="text-align: center;">
 
-![Steve Macenski speaking at Actuate 2024](/images/news/actuate-2024.png)
+![Polymath Robotics](/images/news/polymath-gold.png)
 
-*Photo shows Open Navigation owner Steve Macenski speaking at Actuate 2024 in San Francisco about Polymath applications.*
+</div>
 
-## Polymath Robotics Overview
-
-Based in San Francisco, Polymath develops safety-critical navigation systems for industrial vehicles, targeting heavy equipment in mining, forestry, agriculture, and shipping yards. Their product delivers autonomous navigation capabilities through an accessible REST API designed for non-robotics experts.
-
-## Gold Sponsor Benefits
-
-As a Gold Sponsor, Polymath will receive:
-
-- Monthly meetings with Nav2 maintainers
-- Direct technical support on Nav2 questions
-- Priority feature requests and integration support
-- Recognition across Nav2 channels
-
-Thank you to the Polymath team for supporting open-source robotics!
-
-**Learn more:** [polymathrobotics.com](https://www.polymathrobotics.com/)
+[Want to learn more about Polymath Robotics?](https://www.polymathrobotics.com/)

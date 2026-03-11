@@ -1,0 +1,10 @@
+---
+// Reusable sponsor section for news articles
+// This component displays sponsors at the bottom of news posts
+// To update sponsors, edit SponsorsShowcase.astro - changes apply everywhere automatically
+import SponsorsShowcase from './SponsorsShowcase.astro';
+---
+
+<div class="news-sponsors-section mt-16 pt-12 border-t border-gray-200 dark:border-gray-700">
+  <SponsorsShowcase showTitle={true} compact={true} />
+</div>

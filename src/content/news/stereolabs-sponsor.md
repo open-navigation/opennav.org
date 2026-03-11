@@ -1,68 +1,48 @@
 ---
 title: "Stereolabs - Sponsor Introductions P.III"
-description: "Welcoming Stereolabs as a Nav2 sponsor, bringing advanced depth sensing and spatial AI to mobile robotics."
+description: "Stereolabs - Sponsor Introductions P.III"
 pubDate: 2023-10-09
-author: "Steve Macenski"
+author: "Steven Macenski"
 image: "/images/news/stereolabs.png"
-tags: ["sponsor", "announcement"]
+tags: ["Nav2", "sponsors", "stereolabs"]
 ---
 
-This is the third article in our series introducing Open Navigation LLC's sponsors and partners. Our goal is to highlight companies leveraging Nav2 while maintaining transparency about key stakeholders in the ecosystem's development.
+*This is the third in a series of blog posts to introduce Open Navigation LLC's sponsors and partners. This is both to highlight some fantastic companies and how they leverage Nav2 to power their businesses, but also to pull the curtain back for the benefit of the community to understand the influences and priorities of key stakeholders in the ecosystem's development moving forward. We believe strongly in a high degree of transparency so we can involve, listen to, and ultimately grow the community.*
 
-![Stereolabs Sponsor](/images/news/stereolabs.png)
+## Stereolabs - Prolific Makers of the ZED Stereo Cameras
 
-## About Stereolabs
+Stereolabs is our second Silver-level Sponsor based in San Francisco, New York, and Paris. They produce the ZED series of cameras that are ubiquitous throughout robotics and computer vision research, industry, and education. These cameras are some of the highest quality you can find with key features like hardware synchronized IMUs, polarization filters, and wide field of view (FOV) lenses that enable modern robotics perception. Stereolabs has great documentation and support to boot!
 
-Stereolabs is a Silver-level Sponsor with offices in San Francisco, New York, and Paris. They manufacture the ZED series of stereo cameras widely used in robotics, computer vision research, industry, and education.
+Their cameras rely on the Nvidia Jetson series of embedded GPUs for robotics and AI to power their capable SDK. This produces higher depth information quality than alternatives relying on embedded sensor compute. Moreover, since the ZED cameras are paired with a known architecture with massive compute resources, Stereolabs' products are optimized and tightly-integrated with a set of spatial AI capabilities including 3D object tracking, neural-network aided depth, skeleton tracking, 3D mapping, visual-internal odometry, and more.
 
-### Key Camera Features
-
-The cameras feature hardware synchronized IMUs, polarization filters, and wide field of view (FOV) lenses that enable modern robotics perception. They integrate seamlessly with Nvidia Jetson embedded GPUs.
-
-### Spatial AI Capabilities
-
-Stereolabs provides advanced Spatial AI features:
-
-- 3D object tracking
-- Neural network-aided depth
-- Skeleton tracking
-- 3D mapping
-- Visual-inertial odometry
+<div style="text-align: center;">
 
 ![ZED Camera Product](/images/news/zed-camera.png)
 
-## ZED X Series
+</div>
 
-Stereolabs recently released the ZED X cameras targeting mobile robotics and manipulator perception. Features include:
+Stereolabs has recently released a new series of cameras, the ZED X, specifically targeting mobile robotics and manipulator perception and collision-avoidance needs. They come with wide FOV, global shutter sensors with a synchronized IMU inside of an IP66 rated enclosure. New to ZED, the ZED X utilizes GMSL2 connectors rather than USB for reliable connectivity and higher throughput of data. As roboticists, it's a dream to remove USB from our systems.
 
-- Wide FOV with global shutter sensors
-- Synchronized IMU in IP66 rated enclosure
-- GMSL2 connectors (replacing USB)
-- Similar form factors to competitors but superior quality
+No more unplugging and plugging back in! Another big selling point is that the ZED X sensors have similar form-factors and ranges as other common sensors (eg Realsense, OAK-D), but with superior quality. Now that I have a Jetson Orin AGX, the ZED X is the only camera I plan to use!
+
+<div style="text-align: center;">
 
 ![ZED X Camera](/images/news/zed-x.png)
 
-## Nav2 Partnership
+</div>
 
-The partnership enables Nav2 to provide documentation and tutorials on Visual-Inertial Odometry (VIO) setup. VIO benefits platforms without wheel encoders or with unreliable wheel odometry (legged robots, mecanum-wheeled, skid-steer vehicles).
+P.S. They're hiring for just about every role imaginable. I've been to their offices in Paris, it's cool.
 
-Open Navigation emphasizes: "Open Navigation will not create integrations that solely work with Stereolabs' SDK... the ease of use, tightly-coupled performance, and quality makes it a compelling option."
+## Nav2 & You
 
-All Stereolabs vision technology is free when using ZED cameras.
+Stereolabs' support for Nav2 and the mobile robotics ecosystem enables us to leverage Spatial AI features to augment and improve robot behavior and support for newer types of robot platforms. Visual-inertial odometry (VIO) is a complex field with many open-source implementations of varying quality and practical functionality. Many-a-company has spent months and thousands of dollars in hardware to prototype a solution. VIO has the capability of producing high-quality odometry on platforms who either do not have wheel encoders or who's vehicle type makes wheel odometry notoriously unreliable (e.g. legged, mecanum-wheeled, skid-steer). The partnership with Stereolabs is enabling Nav2 to provide detailed documentation and tutorials about how to set up and work with VIO on your robot platform to take full advantage of VIO to reliably navigate in hours, instead of months.
 
-## ZED Cameras and Nav2 Integration
+Open Navigation's expertise and Nav2's advantage are in robotics technology; not computer vision and modern data-driven perception. Partnering with Stereolabs allows us to quickly setup, learn about and test, and then finally deploy product-quality spatial AI features to create important value to robotics behavior for end-users that would not be possible otherwise - like integrations with VIO. We look forward to a continuing partnership with Stereolabs to advance Nav2's perception processing capabilities to push the state of the art. It's important to note that while Open Navigation will not create integrations that solely work with Stereolabs' SDK (e.x. you may use another VIO solution with the integration), the ease of use, tightly-coupled performance, and quality makes it an compelling option worthy of serious consideration and worthy of default status. All of Stereolabs' vision technology is free to use as long as you're using a ZED camera.
 
-The ZED cameras integrate seamlessly with Nav2, providing:
+P.S. their spatial mapping technology looks mighty interesting to us at Open Navigation as well, stay tuned ;-)
 
-- Depth data for obstacle detection
-- RGB images for visual navigation
-- IMU data for improved localization
-- Pre-built ROS 2 drivers
+## On The Use of Nav2
 
-## Partnership Benefits
+We have no public items to share about Stereolabs' use of Nav2 (yet), but thousands of happy ZED bots are running Nav2, bringing many different robotics products to market. However, stay tuned for later this year for a special announcement from Stereolabs which we'll revisit once public!
 
-As a sponsor, Stereolabs will work closely with us to ensure optimal integration between their cameras and Nav2, benefiting the entire community.
-
-Thank you, Stereolabs, for your support of open-source robotics!
-
-**Learn more:** [stereolabs.com](https://www.stereolabs.com/)
+[Want to learn more about Stereolabs?](https://www.stereolabs.com/)
