@@ -50,6 +50,17 @@ const services = [
   },
 ];
 
+const customers = [
+  { name: 'Amazon', logo: '/images/customers/amazon.png' },
+  { name: 'Nvidia', logo: '/images/customers/nvidia.png' },
+  { name: 'AMD', logo: '/images/customers/amd.png' },
+  { name: 'Dexory', logo: '/images/customers/dexory.png' },
+  { name: 'Polymath', logo: '/images/customers/polymath.png' },
+  { name: 'Bonsai Robotics', logo: '/images/customers/bonsai-robotics.svg' },
+  { name: '6 River Systems', logo: '/images/customers/6-river-systems.png' },
+  { name: 'Rotate8', logo: '/images/customers/rotate8.png' },
+];
+
 const process = [
   {
     step: 1,
@@ -115,7 +126,13 @@ const process = [
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
                 )}
                 {service.icon === 'robot' && (
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  <>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2a1 1 0 011 1v2h-2V3a1 1 0 011-1z" />
+                    <rect x="4" y="5" width="16" height="12" rx="2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    <circle cx="9" cy="10" r="1.5" stroke-width="2" />
+                    <circle cx="15" cy="10" r="1.5" stroke-width="2" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14h6M2 10h2M20 10h2M7 17v4M17 17v4" />
+                  </>
                 )}
                 {service.icon === 'arrows' && (
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
@@ -124,7 +141,7 @@ const process = [
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
                 )}
                 {service.icon === 'wrench' && (
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
                 )}
                 {service.icon === 'cog' && (
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065zM15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -185,6 +202,29 @@ const process = [
             ))}
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trusted Customers -->
+  <section class="section-padding bg-white dark:bg-gray-900">
+    <div class="section-container">
+      <h2 class="text-2xl md:text-3xl font-bold text-nav2-grey dark:text-white mb-4 text-center animate-on-scroll">
+        Our Clients
+      </h2>
+      <p class="text-gray-600 dark:text-gray-300 text-center mb-12 max-w-2xl mx-auto animate-on-scroll">
+        We've partnered with leading companies across the robotics industry.
+      </p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+        {customers.map((customer, index) => (
+          <div class="flex items-center justify-center p-4 animate-on-scroll" style={`animation-delay: ${index * 100}ms`}>
+            <img
+              src={customer.logo}
+              alt={customer.name}
+              class="max-h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 dark:brightness-0 dark:invert"
+            />
+          </div>
+        ))}
       </div>
     </div>
   </section>

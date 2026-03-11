@@ -5,10 +5,15 @@ import LowPolyBackground from '@components/LowPolyBackground.astro';
 
 const generalBenefits = [
   'Commitment to keep Nav2 open and free',
+  'Continued development of capabitilities and applications in Nav2',
+  'Resolution of identified bugs or defects',
+  'High-quality knowledge sharing, documentation, and technical communication',
+  'Enforcement of high quality standards, security, release, and versioning stability',
+  'Creating the environment for collaborations with students, researchers, and companies',
   'Access to maintainers for contracting opportunities',
   'Prioritized responses across email, Slack, and public tickets',
-  'Quarterly newsletters about the project',
-  'Reciprocal relationship sharing use-cases and feedback for roadmap planning',
+  'Regular project updates and syncs',
+  'Reciprocal access: a bidirectional relationship sharing needs and feedback for roadmap planning',
 ];
 
 const tiers = {
@@ -17,7 +22,11 @@ const tiers = {
     benefits: [
       'Small company logo/link on website, repository, and presentations',
       'Up to quarterly private meetings with maintainers',
-      'All general sponsor benefits included',
+      'Commitment to keep Nav2 open and free',
+      'Access to maintainers for contracting opportunities',
+      'Prioritized responses across email, Slack, and public tickets',
+      'Regular project updates and syncs',
+      'Reciprocal access: a bidirectional relationship sharing uses & feedback for roadmap planning',
     ],
   },
   gold: {
@@ -27,7 +36,9 @@ const tiers = {
       'Up to monthly private meetings with maintainers',
       'Direct access to expertise on Nav2-specific questions',
       'First access to new features with integration support',
-      'All general sponsor benefits included',
+      'All previous benefits from Silver',
+      { text: 'Private Slack access for rapid communication', excluded: true },
+      { text: 'Separate private project board', excluded: true },
     ],
   },
   platinum: {
@@ -37,9 +48,9 @@ const tiers = {
       'Up to biweekly meetings plus as-needed access',
       'Unlimited expertise access on any topic',
       'Expanded roadmap influence',
-      'Private Slack access for rapid communication',
+      'Separate private Slack access for rapid communication',
       'Separate private project board',
-      'First access to features, white papers, and case studies',
+      'First access to features, choice in white papers and case studies',
       'Customizable benefits negotiation',
     ],
   },
@@ -66,9 +77,12 @@ const tiers = {
   <section class="section-padding bg-white dark:bg-gray-900">
     <div class="section-container">
       <div class="max-w-3xl mx-auto animate-on-scroll">
-        <h2 class="text-2xl md:text-3xl font-bold text-nav2-grey dark:text-white mb-8 text-center">
+        <h2 class="text-2xl md:text-3xl font-bold text-nav2-grey dark:text-white mb-4 text-center">
           All Sponsors Receive
         </h2>
+        <p class="text-gray-600 dark:text-gray-300 text-center mb-8">
+          Sponsoring Nav2 enables world-class experts to continue to provide proactive support to all end-users globally. It also allows for the continued development of key technologies to solve tangible problems facing the commercialization of robotics in a number of domains.
+        </p>
         <div class="glass-card rounded-2xl p-8">
           <ul class="space-y-4">
             {generalBenefits.map((benefit) => (
@@ -87,6 +101,15 @@ const tiers = {
     </div>
   </section>
 
+  <!-- Sponsor Thank You Banner -->
+  <section class="bg-nav2-blue py-6">
+    <div class="section-container">
+      <p class="text-lg md:text-xl text-white font-semibold text-center">
+        Please thank our sponsors for enabling these amazing benefits to the ROS 2 and Nav2 communities.
+      </p>
+    </div>
+  </section>
+
   <!-- Sponsorship Tiers -->
   <section class="section-padding bg-gray-50 dark:bg-gray-800">
     <div class="section-container">
@@ -94,15 +117,15 @@ const tiers = {
         Sponsorship Tiers
       </h2>
 
-      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        <div class="animate-on-scroll" style="animation-delay: 0ms">
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+        <div class="animate-on-scroll h-full" style="animation-delay: 0ms">
           <SponsorCard
             name={tiers.silver.name}
             tier="silver"
             benefits={tiers.silver.benefits}
           />
         </div>
-        <div class="animate-on-scroll" style="animation-delay: 100ms">
+        <div class="animate-on-scroll h-full" style="animation-delay: 100ms">
           <SponsorCard
             name={tiers.gold.name}
             tier="gold"
@@ -110,7 +133,7 @@ const tiers = {
             highlighted
           />
         </div>
-        <div class="animate-on-scroll" style="animation-delay: 200ms">
+        <div class="animate-on-scroll h-full" style="animation-delay: 200ms">
           <SponsorCard
             name={tiers.platinum.name}
             tier="platinum"
@@ -126,7 +149,7 @@ const tiers = {
     <div class="section-container">
       <div class="max-w-4xl mx-auto">
         <h2 class="text-2xl md:text-3xl font-bold text-nav2-grey dark:text-white mb-8 text-center animate-on-scroll">
-          Why Sponsor Nav2?
+          Why A Sponsorship Model?
         </h2>
 
         <div class="grid md:grid-cols-2 gap-8">

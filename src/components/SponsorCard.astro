@@ -1,12 +1,22 @@
 ---
+interface Benefit {
+  text: string;
+  excluded?: boolean;
+}
+
 interface Props {
   name: string;
   tier: 'silver' | 'gold' | 'platinum';
-  benefits: string[];
+  benefits: (string | Benefit)[];
   highlighted?: boolean;
 }
 
 const { name, tier, benefits, highlighted = false } = Astro.props;
+
+// Normalize benefits to always be Benefit objects
+const normalizedBenefits: Benefit[] = benefits.map(b =>
+  typeof b === 'string' ? { text: b, excluded: false } : b
+);
 
 const tierColors = {
   silver: {
@@ -36,7 +46,7 @@ const colors = tierColors[tier];
 ---
 
 <div class:list={[
-  'glass-card relative rounded-2xl border p-8 transition-all duration-300',
+  'glass-card relative rounded-2xl border p-8 transition-all duration-300 h-full flex flex-col',
   `bg-gradient-to-br ${colors.gradient}`,
   colors.border,
   highlighted && 'scale-105',
@@ -59,13 +69,19 @@ const colors = tierColors[tier];
     </h3>
   </div>
 
-  <ul class="space-y-4">
-    {benefits.map((benefit) => (
+  <ul class="space-y-4 flex-grow">
+    {normalizedBenefits.map((benefit) => (
       <li class="flex items-start gap-3">
-        <svg class:list={['w-5 h-5 flex-shrink-0 mt-0.5', colors.text]} fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-        </svg>
-        <span class="text-nav2-grey dark:text-gray-200">{benefit}</span>
+        {benefit.excluded ? (
+          <svg class="w-5 h-5 flex-shrink-0 mt-0.5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        ) : (
+          <svg class:list={['w-5 h-5 flex-shrink-0 mt-0.5', colors.text]} fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>
+        )}
+        <span class:list={[benefit.excluded ? 'text-gray-400 line-through' : 'text-nav2-grey dark:text-gray-200']}>{benefit.text}</span>
       </li>
     ))}
   </ul>
