@@ -4,34 +4,49 @@ import LowPolyBackground from '@components/LowPolyBackground.astro';
 
 const services = [
   {
-    title: 'Navigation Architecture',
-    description: 'Design and implement robust navigation systems tailored to your robot platform and use case.',
-    icon: 'map',
+    title: 'Nav2 Development & Extension',
+    description: 'Feature development or bug fixes; custom Nav2 servers, plugins, or behaviors to extend the framework for your specific needs.',
+    icon: 'code',
   },
   {
-    title: 'Path Planning',
-    description: 'Custom planning algorithms and optimization for your specific operational environment.',
-    icon: 'route',
+    title: 'Mobility Algorithm Development',
+    description: 'Custom perception, localization, planning, and control algorithms tailored to your application.',
+    icon: 'cpu',
   },
   {
-    title: 'Localization',
-    description: 'SLAM integration, sensor fusion, and localization solutions for indoor and outdoor environments.',
-    icon: 'location',
+    title: 'ROS 2 & Nav2 Training',
+    description: 'Hands-on training for your team on ROS 2 fundamentals, Nav2 configuration, and advanced topics.',
+    icon: 'academic',
   },
   {
-    title: 'Perception',
-    description: 'Obstacle detection, semantic understanding, and sensor integration for safe navigation.',
-    icon: 'eye',
-  },
-  {
-    title: 'Integration Support',
-    description: 'Help integrating Nav2 with your existing ROS 2 stack and robot hardware.',
+    title: 'ROS Solution Architecture',
+    description: 'End-to-end ROS 2 system design, node architecture, and best practices for scalable robotics applications.',
     icon: 'puzzle',
   },
   {
-    title: 'Performance Optimization',
-    description: 'Tune and optimize Nav2 for your specific compute platform and performance requirements.',
-    icon: 'speedometer',
+    title: 'Nav2 Setup & Configuration',
+    description: 'Get Nav2 running on your robot with optimized parameters, tuning, and validation.',
+    icon: 'cog',
+  },
+  {
+    title: 'ROS 2 Porting',
+    description: 'Migrate your applications to ROS 2 with modern patterns, best practices, and performance optimizations from Day 1.',
+    icon: 'arrows',
+  },
+  {
+    title: 'ROS Driver Development',
+    description: 'Custom ROS 2 drivers for sensors, actuators, and hardware interfaces with ongoing support.',
+    icon: 'wrench',
+  },
+  {
+    title: 'General Mobile Robotics Support',
+    description: 'Broad robotics consulting covering system design, hardware selection, troubleshooting, and best practices.',
+    icon: 'robot',
+  },
+  {
+    title: 'Technology Proof of Concept',
+    description: 'Rapid prototyping, feasibility studies, and technology demos to validate your robotics concepts before full development.',
+    icon: 'lightbulb',
   },
 ];
 
@@ -90,23 +105,32 @@ const process = [
           <div class="glass-card glass-card-hover rounded-xl p-6 animate-on-scroll" style={`animation-delay: ${index * 100}ms`}>
             <div class="w-12 h-12 bg-nav2-blue/10 rounded-lg flex items-center justify-center mb-4">
               <svg class="w-6 h-6 text-nav2-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {service.icon === 'map' && (
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                {service.icon === 'code' && (
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                 )}
-                {service.icon === 'route' && (
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                )}
-                {service.icon === 'location' && (
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                )}
-                {service.icon === 'eye' && (
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                {service.icon === 'cpu' && (
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M3 9h2m-2 6h2m14-6h2m-2 6h2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
                 )}
                 {service.icon === 'puzzle' && (
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
                 )}
-                {service.icon === 'speedometer' && (
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                {service.icon === 'robot' && (
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                )}
+                {service.icon === 'arrows' && (
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                )}
+                {service.icon === 'academic' && (
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                )}
+                {service.icon === 'wrench' && (
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                )}
+                {service.icon === 'cog' && (
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065zM15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                )}
+                {service.icon === 'lightbulb' && (
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 )}
               </svg>
             </div>
