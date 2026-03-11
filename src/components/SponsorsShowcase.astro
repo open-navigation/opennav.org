@@ -21,6 +21,11 @@ const sponsors = {
     { name: '3Laws Robotics', logo: '/images/sponsors/3laws.png', url: 'https://www.3lawsrobotics.com/' },
     { name: 'Staer AI', logo: '/images/sponsors/staer.png', url: 'https://www.staer.ai/' },
   ],
+  friends: [
+    { name: 'Rover Robotics', logo: '/images/sponsors/rover.png', url: 'https://roverrobotics.com/' },
+    { name: 'Botronics', logo: '/images/sponsors/botronics.png', url: 'https://botronics.tech/' },
+    { name: 'Barn Owl Tech', logo: '/images/sponsors/barnowl.png', url: 'https://barnowltech.com/' },
+  ],
 };
 ---
 
@@ -45,7 +50,7 @@ const sponsors = {
           <img
             src={sponsor.logo}
             alt={sponsor.name}
-            class={compact ? "h-14 md:h-[72px] w-auto object-contain mx-auto" : "h-[72px] md:h-[92px] lg:h-28 w-auto object-contain mx-auto"}
+            class={compact ? "h-[62px] md:h-[79px] w-auto object-contain mx-auto" : "h-[79px] md:h-[101px] lg:h-[123px] w-auto object-contain mx-auto"}
           />
         </a>
       ))}
@@ -73,8 +78,8 @@ const sponsors = {
     </div>
   </div>
 
-  <!-- Silver Tier -->
-  <div>
+  <!-- Silver Tier with Friends side add-on -->
+  <div class="relative">
     <h3 class="text-center text-sm uppercase tracking-wider text-gray-400 mb-4">Silver</h3>
     <div class="flex flex-wrap justify-center gap-3 md:gap-4">
       {sponsors.silver.map((sponsor) => (
@@ -91,6 +96,27 @@ const sponsors = {
           />
         </a>
       ))}
+    </div>
+
+    <!-- Friends of Nav2 - side add-on, positioned at right edge -->
+    <div class="hidden lg:flex absolute right-0 top-0 flex-col items-center">
+      <h4 class="text-center text-xs uppercase tracking-wider text-gray-400/70 mb-2">Friends of Nav2</h4>
+      <div class="flex flex-col gap-2">
+        {sponsors.friends.map((sponsor) => (
+          <a
+            href={sponsor.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block p-2 bg-gray-50/50 dark:bg-gray-700/30 rounded border border-gray-200/50 dark:border-gray-600/50 hover:border-gray-300 dark:hover:border-gray-500 transition-all hover:shadow-sm hover:scale-105"
+          >
+            <img
+              src={sponsor.logo}
+              alt={sponsor.name}
+              class="h-[14px] md:h-[17px] w-auto object-contain mx-auto opacity-80 hover:opacity-100 transition-opacity"
+            />
+          </a>
+        ))}
+      </div>
     </div>
   </div>
 </div>
