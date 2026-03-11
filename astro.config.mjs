@@ -3,7 +3,8 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://opennav.org',
+  site: 'https://open-navigation.github.io',
+  base: '/opennav.org',
   integrations: [tailwind()],
   output: 'static',
 });
