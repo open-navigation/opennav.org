@@ -1,1 +1,0 @@
-how should I disable my current squarespace website, hook this up with github pages to my domain, and Get form live?
