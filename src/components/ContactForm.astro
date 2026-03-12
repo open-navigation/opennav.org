@@ -7,6 +7,12 @@ const { defaultInterest = '' } = Astro.props;
 ---
 
 <form id="contact-form" class="space-y-6">
+  <!-- Honeypot field - hidden from real users, bots will fill it -->
+  <div class="absolute -left-[9999px]" aria-hidden="true">
+    <label for="website">Website</label>
+    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+  </div>
+
   <div class="grid md:grid-cols-2 gap-6">
     <div>
       <label for="name" class="block text-sm font-medium text-nav2-grey dark:text-gray-200 mb-2">
@@ -160,6 +166,19 @@ const { defaultInterest = '' } = Astro.props;
     buttonLoading?.classList.remove('hidden');
 
     const formData = new FormData(form);
+
+    // Honeypot check - if filled, silently reject (it's a bot)
+    if (formData.get('website')) {
+      // Fake success to not alert the bot
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      successMessage?.classList.remove('hidden');
+      form.reset();
+      submitButton?.removeAttribute('disabled');
+      buttonText?.classList.remove('hidden');
+      buttonLoading?.classList.add('hidden');
+      return;
+    }
+
     const data = {
       name: formData.get('name'),
       email: formData.get('email'),
