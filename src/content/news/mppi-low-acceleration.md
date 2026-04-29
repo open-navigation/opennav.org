@@ -40,6 +40,8 @@ A [user noted](https://github.com/ros-navigation/navigation2/issues/5214#issueco
 
 We set out to understand both issues from first principles, fix them properly, and validate each change with data.
 
+---
+
 ## Investigation 1: Unclamped Controls and Angular Response
 
 We created a controlled test by sending a straight-line path offset 0.5 m laterally from the robot and driving 8m forward, using the low-acceleration asymmetric limits (0.25 m/s^2 forward, -0.5 m/s^2 braking, 1.2 rad/s^2 angular). We generated the path via CLI to remove any variabilities due to path planning.
@@ -50,7 +52,7 @@ Angular velocity response, **before** unclamping (left) and **after** (right):
 
 ![Angular velocity before unclamping](/images/news/low-accel/before.png) ![Angular velocity after unclamping](/images/news/low-accel/after.png)
 
-*Left: clamped controls. Right: unclamped (raw) controls used in optimization.*
+*Top: clamped controls. Bottom: unclamped (raw) controls used in optimization.*
 
 </div>
 
@@ -62,7 +64,7 @@ With standard (high) acceleration limits, the difference is minimal. Just a touc
 
 ![Before with full accel](/images/news/low-accel/before_full_accel.png) ![After with full accel](/images/news/low-accel/after_full_accel.png)
 
-*Left: clamped controls, full acceleration. Right: unclamped controls, full acceleration.*
+*Top: clamped controls, full acceleration. Bottom: unclamped controls, full acceleration.*
 
 </div>
 
@@ -77,6 +79,8 @@ Using open-loop odometry with low-acceleration limits, we again see the higher m
 </div>
 
 So far so good; just more noise in tracking which we expected.
+
+---
 
 ## Investigation 2: Are Acceleration Limits Actually Respected?
 
@@ -225,6 +229,8 @@ With all the feasibility fixes in place, we sanity-checked whether clamping the 
 
 </div>
 
+---
+
 ## Investigation 3: Characterizing & Improving the Oscillation / Wobble
 
 With acceleration limits properly enforced, we turned to the second reported issue: increased angular velocity noise at steady state. We need to characterize the noise before we can evaluate solutions.
@@ -319,9 +325,13 @@ Now that's more like it. The complete chart looks very similar to the original *
 
 Reducing the STD is a complete and legitimate solution to the noise increase from using low acceleration with unclamped controls.
 
-## Asymmetric Acceleration Limits
+---
+
+## Investigation 4: Asymmetric Acceleration Limits
 
 One pleasant surprise: asymmetric acceleration support (higher braking deceleration than forward acceleration) was completely resolved by the work above. The inter-iteration feasibility fixes and unclamped controls naturally handle the different forward/reverse limits through the same constraint machinery. No additional work needed. See the acceleration plots above to confirm that the asymmetric limits (0.25 m/s^2 forward, -0.5 m/s^2 braking) are being properly respected.
+
+---
 
 ## Summary of Changes
 
