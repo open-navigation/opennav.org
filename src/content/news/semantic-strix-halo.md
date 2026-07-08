@@ -30,7 +30,7 @@ This enables applications to:
 We've been able to demonstrate this state-of-the-art server-class foundation model workflow **running locally** on AMD's Strix Halo (same architecture as the X100), which is also capable of performing workloads on the edge like Detection, Segmentation, VLMs, VLAs, LLMs, and more with 32 powerful x86 CPU cores to boot. The newest generations of AI-enabled processors are absolutely amazing for robotics!
 
 
-## Terrain-Aware Navigation
+## **Terrain-Aware Navigation**
 
 One of the most obvious applications is using semantic segmentation for terrain-aware navigation. You can tell the robot what surfaces are safe to drive on and what to avoid, identify dynamic agents, and detect small obstacles or irregularities; and it just works. For outdoor environments, we segment human-created surfaces using `"sidewalk, cement, or pavement"` and label natural surfaces like `"grass or plants"` as illegal cost to avoid. It does well on sidewalks, blacktop, concrete pavement, and even gravel paths without any tuning.
 
@@ -58,11 +58,11 @@ We all know in our various environments there are constantly small and nuanced t
 
 You can also change prompts at runtime via a service call, so the robot can adapt to different environments or tasks mid-mission. There are many uses of semantic data from SAM3 beyond terrain navigation: behavior enhancement based on situational awareness, localization pipeline improvement, extracting dynamic obstacles for tracking, and so forth.
 
-## Running on the Edge
+## **Running on the Edge**
 
 The AMD Strix Halo (Ryzen AI Max+ 395, X100) pairs an NPU and a Radeon GPU with 32 x86 cores and unified memory in a single package, so SAM3 amazingly fits and runs on the edge without an external accelerator. 5-10 Hz for a server class semantic segmentation algorithm is pretty impressive!
 
-| Prompts | New detect every frame (ms) | New Detect every 1s, track between |
+| Prompts | Detect every frame (ms) | Detect 1s, track between |
 | ------- | ------------------ | --------------------- |
 | 1       |  154.6 (6.46 Hz)   |  103.8 (9.63 Hz)      |
 | 2       |  183.3 (5.45 Hz)   |  136.0 (7.35 Hz)      |
@@ -70,7 +70,7 @@ The AMD Strix Halo (Ryzen AI Max+ 395, X100) pairs an NPU and a Radeon GPU with 
 
 Our work also provides a hybrid mode that runs full SAM3 detection on keyframes and uses SAM2-style tracker propagation between them, giving a 40-100% throughput improvement while maintaining detection quality. The choice of redetecting each frame or tracking between keyframes depends on the FOV of the sensor and how dynamic your environment is.
 
-## Getting Started
+## **Getting Started**
 
 We have a full [tutorial on the Nav2 documentation site](https://docs.nav2.org/tutorials/docs/navigation2_with_sam3_semantic_segmentation.html) walking through everything from installing ROCm and Python dependencies through launching Nav2 with semantic costmaps. The source code is available on [GitHub](https://github.com/open-navigation/opennav_amd_semantic_navigation). The setup script handles the dependency complexity so you don't have to. 
 
