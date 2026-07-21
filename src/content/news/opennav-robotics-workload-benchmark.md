@@ -53,6 +53,10 @@ This benchmark can be easily reproduced using the documentation in ``opennav_ben
 
 In the inaugural evaluation of the benchmark, we compared the AMD Strix Halo (X100), NVIDIA Jetson Thor, and NVIDIA Jetson Orin AGX platforms. The Thor and Strix Halo are both modern, high-performance platforms designed for robotics and AI workloads, while the Orin AGX is a previous-generation platform that remains widely deployed in production.
 
+<a href="https://github.com/open-navigation/opennav_robotics_workload_benchmark/blob/main/docs/Robotics%20Workload%20Platform%20Benchmarking%20Results.pdf?raw=true" download>
+  Download the full technical report here!
+</a>
+
 We test this principally in each of their full-power configurations which are most commonly used in industry to leverage the full capabilities of the platform for the most demanding GPU workloads. Their power levels are shown below. We also run this in a power-constrained mode whose results can be found in ``opennav_benchmark_analysis/output`` along with the figures analyzed here. Most trends are broadly similar in the power-constrained mode, albeit with reduced performance across the board.
 
 | Platform | Max TDP |
