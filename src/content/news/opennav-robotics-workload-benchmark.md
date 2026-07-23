@@ -1,7 +1,7 @@
 ---
 title: "AMD Strix Halo vs. NVIDIA Jetson Thor, Orin AGX for Real Robotics Workloads"
 description: "Open Navigation Robotics Workload Benchmark"
-pubDate: 2026-06-22
+pubDate: 2026-07-23
 author: "Steven Macenski"
 image: ""
 tags: ["Nav2", "benchmark", "amd", "nvidia"]
