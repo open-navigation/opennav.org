@@ -35,13 +35,13 @@ Without their work and early vision, there would be no Nav2 as we know it today,
 
 **Nav2 & You**
 
-Intel's support for Nav2 enables us to continue improving the performance and capabilities of Nav2 on the compute that robots actually ship with. Most mobile robots are still CPU-bound, so making sure Nav2 runs efficiently on Intel's processors - and takes advantage of the additional accelerators now available on Intel Core Ultra (eg integrated GPU, NPU) and the OpenVINO toolkit - benefits a very large portion of the robotics community. As always, the improvements made through this partnership will be open-source so everyone can benefit, regardless of which hardware you use.
+Intel's support for Nav2 enables us to continue improving the performance and capabilities of Nav2 on the compute that robots actually ship with. Most mobile robots are still CPU-bound, so making sure Nav2 runs efficiently on Intel's processors benefits a very large portion of the robotics community. As always, the improvements made through this partnership will be open-source so everyone can benefit, regardless of which hardware you use.
 
 We look forward to working closely with Intel again and have some fun things in the works to share at a later date ;-)
 
-<div style="text-align: center;">
+In the meantime, if you're building robots on Intel hardware, check out Intel's Robotics AI Suite: it has validated components, reference applications, and an Autonomous Mobile Robot blueprint built on top of ROS 2, with optimizations for Intel CPUs, GPUs, and NPUs. [Learn more about Intel Robotics →](https://developer.robotics.intel.com/)
 
-[Want to learn more about Intel Robotics?](https://www.intel.com/content/www/us/en/learn/artificial-intelligence-robotics.html)
+<div style="text-align: center;">
 
 [Interested in becoming a sponsor?](https://opennav.org/sponsorship/)
 
